@@ -1,12 +1,15 @@
-(function() {
+function injectButtons() {
 
-  headers = document.querySelectorAll('header');
+	// Grab header elements in each post
+	headers = document.querySelectorAll('header');
 
-  images = document.querySelectorAll('img');
+	// Grab images appearing on the page
+	images = document.querySelectorAll('img');
 
-  for(let i = 0; i < headers.length; i++) {
-    let instanshu = document.createElement('a');
-    instanshu.innerHTML = `<style>
+	// Iterate through the headers and inject a button to download corresponding image
+	for(let i = 0; i<headers.length; i++) {
+		let dlbutton = document.createElement('a');
+		dlbutton.innerHTML = `<style>
                             @charset "UTF-8";
 
                             .instanshu-default {
@@ -279,10 +282,11 @@
 
               <a download href=${images[(2*i)+1].src}>
               <button class="instanshu-unite instanshu-sm instanshu-success">Download</button>`;
+		if(headers[i].querySelectorAll('a').length < 3) {
+			headers[i].appendChild(dlbutton);
+		}
+	}
+}
 
-    if(headers[i].querySelectorAll('a').length < 3) {
-      headers[i].appendChild(instanshu);
-    }
-  }
 
-})();
+injectButtons();
