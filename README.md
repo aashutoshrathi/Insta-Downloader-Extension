@@ -11,7 +11,8 @@ A simple chrome extension that injects a button to each post to download the cor
 
 ## In action :movie_camera:
 
-Coming soon... :wink:
+![Demo](img/insta-demo.gif)
+
 
 ## Installation
 
