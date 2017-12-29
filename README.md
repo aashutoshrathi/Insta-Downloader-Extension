@@ -2,13 +2,16 @@
 
 [<img src="img/icon-128x128.png" align="right" width="100">](https://github.com/aashutoshrathi/Insta-Downloader-Extension)
 
-[![forthebadge](http://forthebadge.com/images/badges/fuck-it-ship-it.svg)](http://forthebadge.com)
 [![forthebadge](http://forthebadge.com/images/badges/built-with-love.svg)](http://forthebadge.com)
 [![forthebadge](http://forthebadge.com/images/badges/uses-js.svg)](http://forthebadge.com)
-[![forthebadge](http://forthebadge.com/images/badges/pretty-risque.svg)](http://forthebadge.com)
 [![forthebadge](http://forthebadge.com/images/badges/makes-people-smile.svg)](http://forthebadge.com)
 
 This is simple chrome extension, clicking on it, gives your Instagram download buttons :tada:.
+
+
+## In action :movie_camera:
+
+Coming soon... :wink:
 
 ## Installation
 
