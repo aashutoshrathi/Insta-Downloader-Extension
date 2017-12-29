@@ -6,7 +6,7 @@
 [![forthebadge](http://forthebadge.com/images/badges/uses-js.svg)](http://forthebadge.com)
 [![forthebadge](http://forthebadge.com/images/badges/makes-people-smile.svg)](http://forthebadge.com)
 
-This is simple chrome extension, clicking on it, gives your Instagram download buttons :tada:.
+A simple chrome extension that injects a button to each post to download the corresponding image in the best available quality. :tada:.
 
 
 ## In action :movie_camera:
