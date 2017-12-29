@@ -19,6 +19,11 @@ Coming soon... :wink:
    ```sh
    $ git clone https://github.com/aashutoshrathi/Insta-Downloader-Extension.git
    ```
+
+   OR 
+
+   Download here: [Instagram Downloader ✨](https://github.com/aashutoshrathi/Insta-Downloader-Extension/archive/master.zip)
+
  - Go to `chrome://extensions/`.
  - Click on Load Unpacked Extension and Open/Select the folder.
  - To test it, go to [Instagram](https://www.instagram.com).
