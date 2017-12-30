@@ -23,7 +23,7 @@ A simple chrome extension that injects a button to each post to download the cor
 
    OR 
 
-   Download here: [Instagram Downloader ✨](https://github.com/aashutoshrathi/Insta-Downloader-Extension/archive/master.zip)
+   Download the latest version here: [Instagram Downloader ✨](https://github.com/aashutoshrathi/Insta-Downloader-Extension/archive/master.zip)
 
  - Go to `chrome://extensions/`.
  - Click on Load Unpacked Extension and Open/Select the folder.
