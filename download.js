@@ -306,12 +306,9 @@ function injectButtons() {
     check = 0;
     offset = 0;
     for(let i = 0; i<headers.length; i++) {
-      if(check%2 === 1) {
-        offset++;
-      }
       let dlbutton = document.createElement('a');
-      dlink = images[(2*i)+1-offset].src;
-      if (images[(2*i)+1].naturalHeight === 150) {
+      dlink = images[(2*i)+1-check].src;
+      if (images[(2 * i) + 1].naturalHeight === 150 || videos[j].poster === images[(2 * i) + 1].src) {
         dlink = videos[j].src;
         j++;
         check++;
