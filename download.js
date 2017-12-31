@@ -303,12 +303,18 @@ function injectButtons() {
 
   else {
     // Iterate through the headers and inject a button to download corresponding image
+    check = 0;
+    offset = 0;
     for(let i = 0; i<headers.length; i++) {
+      if(check%2 === 1) {
+        offset++;
+      }
       let dlbutton = document.createElement('a');
-      dlink = images[(2*i) + 1].src;
-      if (videos[j].poster === images[(2*i) + 1].src) {
+      dlink = images[(2*i)+1-offset].src;
+      if (images[(2*i)+1].naturalHeight === 150) {
         dlink = videos[j].src;
         j++;
+        check++;
       }
       dlbutton.innerHTML = ` ${css}
                 <a download href=${dlink}>
