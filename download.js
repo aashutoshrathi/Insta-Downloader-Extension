@@ -13,7 +13,11 @@ function injectButtons() {
 	headers = document.querySelectorAll('header');
 
 	// Grab images appearing on the page
-	images = document.querySelectorAll('img');
+  images = document.querySelectorAll('img');
+  
+  // Grab images appearing on the page
+  videos = document.querySelectorAll('video');
+  j = 0;
 
   css = `<style>
             @charset "UTF-8";
@@ -301,8 +305,13 @@ function injectButtons() {
     // Iterate through the headers and inject a button to download corresponding image
     for(let i = 0; i<headers.length; i++) {
       let dlbutton = document.createElement('a');
+      dlink = images[(2*i) + 1].src;
+      if (videos[j].poster === images[(2*i) + 1].src) {
+        dlink = videos[j].src;
+        j++;
+      }
       dlbutton.innerHTML = ` ${css}
-                <a download href=${images[(2*i)+1].src}>
+                <a download href=${dlink}>
                 <button class="instanshu-unite instanshu-sm instanshu-success">Download</button>`;
       if(headers[i].querySelectorAll('a').length < 3) {
         headers[i].appendChild(dlbutton);
