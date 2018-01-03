@@ -26,7 +26,7 @@ A simple chrome extension that injects a button to each post to download the cor
    Download the latest version here: [Instagram Downloader ✨](https://github.com/aashutoshrathi/Insta-Downloader-Extension/archive/master.zip)
 
  - Go to `chrome://extensions/`.
- - Just drag and drop `Typeracer-Hack.crx` to page.
+ - Just drag and drop `Insta-Downloader-Extension.crx` to page.
    
    **OR**
 
