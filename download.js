@@ -78,8 +78,8 @@ function injectButtons() {
         headers[i].appendChild(dlbutton);
       }
       btns = headers[i].querySelectorAll('button');
-      if(btns[0] && btns[0].parentElement.href === "https://www.instagram.com/") {
-        btns[0].parentElement.href = dlink;
+      if(btns[1] && btns[1].parentElement.href === "https://www.instagram.com/") {
+        btns[1].parentElement.href = dlink;
       }
     }
   }
