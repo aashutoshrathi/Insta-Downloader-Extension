@@ -13,6 +13,7 @@ function injectButtons() {
     }
   }
 
+
 	// Grab header elements in each post or profile
 	headers = document.querySelectorAll('header');
 
@@ -25,6 +26,149 @@ function injectButtons() {
 
   css = `<style>
             @charset "UTF-8";
+            .instaashu-default {
+              color: #fff;
+            }
+            .instaashu-primary,
+            .instaashu,
+            .instaashu-lg,
+            .instaashu-md,
+            .instaashu-sm,
+            .instaashu-xs {
+              color: #1d89ff;
+            }
+            .instaashu-warning {
+              color: #feab3a;
+            }
+            .instaashu-danger {
+              color: #ff5964;
+            }
+            .instaashu-success {
+              color: #28b78d;
+            }
+            .instaashu-royal {
+              color: #bd2df5;
+            }
+            .instaashu,
+            .instaashu-lg,
+            .instaashu-md,
+            .instaashu-sm,
+            .instaashu-xs {
+              margin: 0;
+              padding: 0;
+              border-width: 0;
+              border-color: transparent;
+              background: transparent;
+              font-weight: 400;
+              cursor: pointer;
+              position: relative;
+            }
+            .instaashu-lg {
+              padding: 8px 15px;
+              font-size: 24px;
+              font-family: inherit;
+            }
+            .instaashu-md {
+              font-size: 20px;
+              font-family: inherit;
+              padding: 5px 12px;
+            }
+            .instaashu-sm {
+              padding: 4px 1px;
+              font-size: 16px;
+              margin-right: 10px;
+              font-family: inherit;
+            }
+            .instaashu-xs {
+              padding: 3px 8px;
+              font-size: 12px;
+              font-family: inherit;
+            }
+            .instaashu-material-circle {
+              margin: 0;
+              padding: 0;
+              border-width: 0;
+              border-color: transparent;
+              background: transparent;
+              font-weight: 400;
+              cursor: pointer;
+              position: relative;
+              font-size: 20px;
+              font-family: inherit;
+              padding: 5px 12px;
+              overflow: hidden;
+              border-width: 0;
+              border-radius: 50%;
+              background: #fff;
+              box-shadow: 0 2px 5px 0 rgba(0,0,0,0.18), 0 1px 5px 0 rgba(0,0,0,0.15);
+              color: #1d89ff;
+              -webkit-transition: all 0.25s cubic-bezier(0.02, 0.01, 0.47, 1);
+              transition: all 0.25s cubic-bezier(0.02, 0.01, 0.47, 1);
+              -webkit-transform: translate3d(0, 0, 0);
+                      transform: translate3d(0, 0, 0);
+            }
+            .instaashu-material-circle:hover,
+            .instaashu-material-circle:focus {
+              box-shadow: 0 5px 11px 0 rgba(0,0,0,0.18), 0 4px 15px 0 rgba(0,0,0,0.15);
+              -webkit-transition: box-shadow 0.4s ease-out;
+              transition: box-shadow 0.4s ease-out;
+            }
+            .instaashu-material-circle.instaashu-xs {
+              padding: 3px 8px;
+              font-size: 12px;
+              font-family: inherit;
+              width: 28px;
+              height: 28px;
+              line-height: 24px;
+            }
+            .instaashu-material-circle.instaashu-sm {
+              padding: 4px 10px;
+              font-size: 16px;
+              font-family: inherit;
+              width: 36px;
+              height: 36px;
+              line-height: 30px;
+            }
+            .instaashu-material-circle.instaashu-md {
+              font-size: 20px;
+              font-family: inherit;
+              padding: 5px 12px;
+              width: 44px;
+              height: 44px;
+              line-height: 38px;
+            }
+            .instaashu-material-circle.instaashu-lg {
+              padding: 8px 15px;
+              font-size: 24px;
+              font-family: inherit;
+              width: 54px;
+              height: 54px;
+              line-height: 44px;
+            }
+            .instaashu-material-circle.instaashu-default {
+              background: #fff;
+              color: #1d89ff;
+            }
+            .instaashu-material-circle.instaashu-primary {
+              background: #1d89ff;
+              color: #fff;
+            }
+            .instaashu-material-circle.instaashu-warning {
+              background: #feab3a;
+              color: #fff;
+            }
+            .instaashu-material-circle.instaashu-danger {
+              background: #ff5964;
+              color: #fff;
+            }
+            .instaashu-material-circle.instaashu-success {
+              background: #28b78d;
+              color: #fff;
+            }
+            .instaashu-material-circle.instaashu-royal {
+              background: #bd2df5;
+              color: #fff;
+            }
 
             .instanshu-default {
               color: #fff;
@@ -294,7 +438,6 @@ function injectButtons() {
 
           </style>`;
 
-
   if(else_profile) {
     let dlbutton = document.createElement('a');
     dlbutton.innerHTML = ` ${css}
@@ -319,17 +462,27 @@ function injectButtons() {
     // Iterate through the headers and inject a button to download corresponding image
     for(let i = 0; i<headers.length; i++) {
       let dlbutton = document.createElement('a');
+      let pfbutton = document.createElement('a');
       dlink = images[(2*i)+1].src;
+      dplink = images[2*i].src;
       if (images[(2*i) + 1].naturalHeight === 150 || (videos[j] && videos[j].poster === dlink)) {
         if(videos[j].src) {
           dlink = videos[j].src;
         }
         j++;
       }
+
       dlbutton.innerHTML = ` ${css}
                 <a download href=${dlink}>
                 <button class="instanshu-unite instanshu-sm instanshu-success">Download</button>`;
-      if(headers[i].querySelectorAll('button').length === 0) {
+
+      pfbutton.innerHTML = ` ${css}
+                <a download href=${dplink}>
+                <button class="instaashu-material-circle instaashu-sm instaashu-success instaashu-no-outline" style ="margin-right:10px; padding: 4px 1px;">DP<i class="fa fa-arrow-down" aria-hidden="true"></i>
+                </button>`;
+
+      if(headers[i].querySelectorAll('button').length < 2) {
+        headers[i].appendChild(pfbutton);
         headers[i].appendChild(dlbutton);
       }
       btns = headers[i].querySelectorAll('button');
