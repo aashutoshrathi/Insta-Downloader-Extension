@@ -10,7 +10,7 @@ function injectButtons() {
   self_profile = false;
 
   for(var i=0; i<buttons.length; i++) {
-    if(buttons[i].innerText === "Follow" || buttons[i].innerText === "Following") {
+    if(buttons[i].innerText === "Following") {
       else_profile = true;
     }
     if(buttons[i].innerText === "Edit Profile") {
