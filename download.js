@@ -1,11 +1,15 @@
 function injectButtons() {
 
   buttons = document.querySelectorAll('button');
-  profile = false;
+  else_profile = false;
+  self_profile = false;
 
   for(var i=0; i<buttons.length; i++) {
-    if(buttons[i].innerText === "Options") {
-      profile = true;
+    if(buttons[i].innerText === "Follow" || buttons[i].innerText === "Following") {
+      else_profile = true;
+    }
+    if(buttons[i].innerText === "Edit Profile") {
+      self_profile = true;
     }
   }
 
@@ -291,12 +295,22 @@ function injectButtons() {
           </style>`;
 
 
-  if(profile) {
+  if(else_profile) {
     let dlbutton = document.createElement('a');
     dlbutton.innerHTML = ` ${css}
                 <a download href=${images[0].src}>
                 <button class="instanshu-unite instanshu-sm instanshu-success">Download DP</button>`;
-      if(headers[0].querySelectorAll('a').length < 6) {
+      if(headers[0].querySelectorAll('button').length < 3) {
+        headers[0].appendChild(dlbutton);
+      }
+  }
+
+  else if (self_profile) {
+    let dlbutton = document.createElement('a');
+    dlbutton.innerHTML = ` ${css}
+                <a download href=${images[0].src}>
+                <button class="instanshu-unite instanshu-sm instanshu-success">Download DP</button>`;
+      if(headers[0].querySelectorAll('button').length < 4) {
         headers[0].appendChild(dlbutton);
       }
   }
