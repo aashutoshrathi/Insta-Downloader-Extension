@@ -26,11 +26,9 @@ A simple chrome extension that injects a button to each post to download the cor
    Download the latest version here: [Instagram Downloader ✨](https://github.com/aashutoshrathi/Insta-Downloader-Extension/archive/master.zip)
 
  - Go to `chrome://extensions/`.
- - Just drag and drop `Insta-Downloader-Extension.crx` to page.
-   
-   **OR**
+ - Click on Load Unpacked Extension and Open/Select the folder.
 
-   Click on Load Unpacked Extension and Open/Select the folder.
+   
  - To test it, go to [Instagram](https://www.instagram.com).
  - Binge Download all posts you like :rocket:.
 
