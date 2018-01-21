@@ -1,5 +1,3 @@
-chrome.browserAction.onClicked.addListener(function (tab) {
-    chrome.tabs.executeScript(tab.ib, {
-        file: 'download.js'
-    });
+chrome.tabs.onUpdated.addListener(function() {
+  chrome.tabs.executeScript(null, { file: "download.js" });
 });

@@ -2,9 +2,9 @@ function injectButtons() {
 
   buttons = document.querySelectorAll('button');
   profile = false;
-  
-  for(var i=0; i<buttons.length; i++) { 
-    if(buttons[i].innerText === "Options") { 
+
+  for(var i=0; i<buttons.length; i++) {
+    if(buttons[i].innerText === "Options") {
       profile = true;
     }
   }
@@ -14,10 +14,10 @@ function injectButtons() {
 
 	// Grab images appearing on the page
   images = document.querySelectorAll('img');
-  
+
   // Grab images appearing on the page
   videos = document.querySelectorAll('video');
-  j = 0;
+  let j = 0;
 
   css = `<style>
             @charset "UTF-8";
@@ -290,7 +290,7 @@ function injectButtons() {
 
           </style>`;
 
-	
+
   if(profile) {
     let dlbutton = document.createElement('a');
     dlbutton.innerHTML = ` ${css}
@@ -306,20 +306,30 @@ function injectButtons() {
     for(let i = 0; i<headers.length; i++) {
       let dlbutton = document.createElement('a');
       dlink = images[(2*i)+1].src;
-      if (images[(2 * i) + 1].naturalHeight === 150 || (videos[j] && videos[j].poster === images[(2 * i) + 1].src)) {
-        dlink = videos[j].src;
+      if (images[(2*i) + 1].naturalHeight === 150 || (videos[j] && videos[j].poster === dlink)) {
+        if(videos[j].src) {
+          dlink = videos[j].src;
+        }
         j++;
       }
       dlbutton.innerHTML = ` ${css}
                 <a download href=${dlink}>
                 <button class="instanshu-unite instanshu-sm instanshu-success">Download</button>`;
-      if(headers[i].querySelectorAll('a').length < 3) {
+      if(headers[i].querySelectorAll('button').length === 0) {
         headers[i].appendChild(dlbutton);
+      }
+      btns = headers[i].querySelectorAll('button');
+      if(btns[0] && btns[0].parentElement.href === "https://www.instagram.com/") {
+        btns[0].parentElement.href = dlink;
       }
     }
   }
-  
+  window.onscroll = function() {refresh()};
 }
 
+function refresh() {
+  // as we only can have 8 articles at a time.
+      injectButtons();
+}
 
 injectButtons();
