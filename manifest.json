@@ -2,7 +2,7 @@
     "name": "Instagram Downloader",
     "version": "0.0.2",
     "manifest_version": 2,
-    "description": "One click and Instagram will get download button",
+    "description": "Injects download buttons to Instagram Media",
     "homepage_url": "http://aashutoshrathi.co",
     "background": {
         "scripts": [
@@ -17,7 +17,7 @@
     },
 
     "browser_action": {
-        "default_title": "Click Me"
+        "default_title": "Instagram Downloader"
     },
 
     "web_accessible_resources": [
