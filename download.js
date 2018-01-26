@@ -46,6 +46,10 @@ function injectButtons() {
       if(x.querySelectorAll('button').length < 1) {
           x.appendChild(db);
       }
+      btns = x.querySelectorAll('button');
+      if(btns[0] && btns[0].parentElement.href === document.location.href) {
+        btns[0].parentElement.href = images[i].src;
+      }
     }
 
   }
@@ -67,6 +71,10 @@ function injectButtons() {
       if(x.querySelectorAll('button').length < 1) {
           x.appendChild(db);
       }
+      btns = x.querySelectorAll('button');
+      if(btns[0] && btns[0].parentElement.href === document.location.href) {
+        btns[0].parentElement.href = images[i].src;
+      }
     } 
   }
 
@@ -86,6 +94,10 @@ function injectButtons() {
                   <button class="instanshu-unite instanshu-sm instanshu-success" style="left: 100px; top: 10px;">Download</button>`;
       if(x.querySelectorAll('button').length < 1) {
           x.appendChild(db);
+      }
+      btns = x.querySelectorAll('button');
+      if(btns[0] && btns[0].parentElement.href === document.location.href) {
+        btns[0].parentElement.href = images[i].src;
       }
     }      
   }
@@ -120,7 +132,7 @@ function injectButtons() {
         headers[i].appendChild(dlbutton);
       }
       btns = headers[i].querySelectorAll('button');
-      if(btns[1] && btns[1].parentElement.href === "https://www.instagram.com/") {
+      if(btns[1] && btns[1].parentElement.href === document.location.href) {
         btns[1].parentElement.href = dlink;
       }
     }
