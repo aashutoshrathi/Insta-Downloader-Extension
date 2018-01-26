@@ -8,6 +8,8 @@ function injectButtons() {
   buttons = document.querySelectorAll('button');
   else_profile = false;
   self_profile = false;
+  explore = false;
+  headings = document.querySelectorAll('h2')
 
   for(var i=0; i<buttons.length; i++) {
     if(buttons[i].innerText === "Follow" || buttons[i].innerText === "Following") {
@@ -17,6 +19,13 @@ function injectButtons() {
       self_profile = true;
     }
   }
+
+  for(var i=0; i<headings.length; i++) {
+    if(headings[i].innerText === "Explore") {
+      explore = true;
+    }
+  }
+
 
 	// Grab header elements in each post or profile
 	headers = document.querySelectorAll('header');
@@ -28,7 +37,20 @@ function injectButtons() {
   videos = document.querySelectorAll('video');
   let j = 0;
 
-  if(else_profile) {
+  if(explore) {
+    for(let i = 3; i<images.length; i++) {
+      let x = images[i].parentElement.parentElement.parentElement.parentElement;
+      let db = document.createElement('a');
+      db.innerHTML = `<a download href=${images[i].src}>
+                  <button class="instanshu-unite instanshu-sm instanshu-success" style="left: 100px; top: 10px;">Download</button>`;
+      if(x.querySelectorAll('button').length < 1) {
+          x.appendChild(db);
+      }
+    }
+
+  }
+
+  else if(else_profile) {
     let dlbutton = document.createElement('a');
     dlbutton.innerHTML = `
                 <a download href=${images[0].src}>
@@ -36,6 +58,16 @@ function injectButtons() {
       if(headers[0].querySelectorAll('button').length < 3) {
         headers[0].appendChild(dlbutton);
       }
+
+    for(let i = 1; i<images.length; i++) {
+      let x = images[i].parentElement.parentElement.parentElement.parentElement;
+      let db = document.createElement('a');
+      db.innerHTML = `<a download href=${images[i].src}>
+                  <button class="instanshu-unite instanshu-sm instanshu-success" style="left: 100px; top: 10px;">Download</button>`;
+      if(x.querySelectorAll('button').length < 1) {
+          x.appendChild(db);
+      }
+    } 
   }
 
   else if (self_profile) {
@@ -43,9 +75,19 @@ function injectButtons() {
     dlbutton.innerHTML = `
                 <a download href=${images[0].src}>
                 <button class="instanshu-unite instanshu-sm instanshu-success">Download DP</button>`;
-      if(headers[0].querySelectorAll('button').length < 4) {
-        headers[0].appendChild(dlbutton);
+    if(headers[0].querySelectorAll('button').length < 4) {
+      headers[0].appendChild(dlbutton);
+    }
+
+    for(let i = 1; i<images.length; i++) {
+      let x = images[i].parentElement.parentElement.parentElement.parentElement;
+      let db = document.createElement('a');
+      db.innerHTML = `<a download href=${images[i].src}>
+                  <button class="instanshu-unite instanshu-sm instanshu-success" style="left: 100px; top: 10px;">Download</button>`;
+      if(x.querySelectorAll('button').length < 1) {
+          x.appendChild(db);
       }
+    }      
   }
 
   else {
