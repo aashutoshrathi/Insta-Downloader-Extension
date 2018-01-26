@@ -11,7 +11,7 @@ A simple chrome extension that injects a button to each post to download the cor
 
 ## In action :movie_camera:
 
-![Demo](img/insta-demo.gif)
+![Demo](https://media.giphy.com/media/3ohs4rvNk4punuQAta/giphy.gif)
 
 
 ## Installation
