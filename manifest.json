@@ -1,6 +1,6 @@
 {
     "name": "Instagram Downloader",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "manifest_version": 2,
     "description": "Injects download buttons to Instagram Media",
     "homepage_url": "http://aashutoshrathi.co",
@@ -12,10 +12,8 @@
     ],
 
     "icons": {
-      "16": "img/icon-16x16.png",
-      "32": "img/icon-32x32.png",
-      "64": "img/icon-64x64.png",
-      "128": "img/icon-128x128.png"
+      "48": "img/icon-48x48.png",
+      "96": "img/icon-96x96.png"
     },
 
     "browser_action": {
