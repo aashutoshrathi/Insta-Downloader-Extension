@@ -6,7 +6,7 @@
 [![forthebadge](http://forthebadge.com/images/badges/uses-js.svg)](http://forthebadge.com)
 [![forthebadge](http://forthebadge.com/images/badges/makes-people-smile.svg)](http://forthebadge.com)
 
-A simple chrome extension that injects a button to each post to download the corresponding image/video in the best available quality. :tada:.
+An extension that injects a button to each post to download the corresponding image/video in the best available quality. :tada:.
 
 
 ## In action :movie_camera:
@@ -15,6 +15,22 @@ A simple chrome extension that injects a button to each post to download the cor
 
 
 ## Installation
+
+### Firefox Users:
+
+[<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Firefox_Logo%2C_2017.svg/2000px-Firefox_Logo%2C_2017.svg.png" align="right" width="90">](https://addons.mozilla.org/en-US/firefox/addon/instagram-media-downloader/)
+
+ - Download it from Store: https://addons.mozilla.org/en-US/firefox/addon/instagram-media-downloader/
+
+   **OR**
+   
+   Check Firefox Development Branch [here](https://github.com/aashutoshrathi/Insta-Downloader-Extension/tree/firefox)
+
+ - **Please leave feedback and ratings** ✍️
+ - To test it, go to [Instagram](https://www.instagram.com).
+ - Binge Download all posts you like :rocket:.
+
+### Chrome Users:
 
  - Get it locally -
    ```sh
