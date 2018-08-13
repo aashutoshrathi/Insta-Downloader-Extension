@@ -2,11 +2,11 @@
 
 
 <h1 align="center"> Instagram Downloader </h1> 
-
+<p align="center">
 <img src="http://forthebadge.com/images/badges/built-with-love.svg" align="center">
 <img src="http://forthebadge.com/images/badges/uses-js.svg" align="center">
 <img src="https://img.shields.io/github/license/aashutoshrathi/Insta-Downloader-Extension.svg?style=for-the-badge" align="center">
-
+</p>
 
 
 An extension that injects a button to each post to download the corresponding image/video in the best available quality. :tada:.
