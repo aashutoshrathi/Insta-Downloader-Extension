@@ -5,7 +5,8 @@
   "description": "Injects download buttons to Instagram Media",
   "homepage_url": "http://aashutoshrathi.co",
   "background": {
-    "scripts": ["background.js"]
+    "scripts": ["background.js"],
+    "persistent": false
   },
 
   "icons": {
@@ -22,5 +23,10 @@
 
   "web_accessible_resources": ["insta-down-css.css"],
 
-  "permissions": ["storage", "tabs", "https://www.instagram.com/"]
+  "permissions": [
+    "storage",
+    "tabs",
+    "webNavigation",
+    "https://www.instagram.com/"
+  ]
 }
