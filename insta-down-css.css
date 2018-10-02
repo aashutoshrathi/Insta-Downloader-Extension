@@ -1,4 +1,3 @@
-
 @charset "UTF-8";
 .instaashu-default {
   color: #fff;
@@ -74,16 +73,16 @@
   border-width: 0;
   border-radius: 50%;
   background: #fff;
-  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.18), 0 1px 5px 0 rgba(0,0,0,0.15);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.18), 0 1px 5px 0 rgba(0, 0, 0, 0.15);
   color: #1d89ff;
   -webkit-transition: all 0.25s cubic-bezier(0.02, 0.01, 0.47, 1);
   transition: all 0.25s cubic-bezier(0.02, 0.01, 0.47, 1);
   -webkit-transform: translate3d(0, 0, 0);
-          transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
 }
 .instaashu-material-circle:hover,
 .instaashu-material-circle:focus {
-  box-shadow: 0 5px 11px 0 rgba(0,0,0,0.18), 0 4px 15px 0 rgba(0,0,0,0.15);
+  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
   -webkit-transition: box-shadow 0.4s ease-out;
   transition: box-shadow 0.4s ease-out;
 }
@@ -219,8 +218,10 @@
   border-radius: 100px;
   background: #fff;
   color: #1d89ff;
-  -webkit-transition: color 0.3s cubic-bezier(0.02, 0.01, 0.47, 1), border-color 0.3s cubic-bezier(0.02, 0.01, 0.47, 1);
-  transition: color 0.3s cubic-bezier(0.02, 0.01, 0.47, 1), border-color 0.3s cubic-bezier(0.02, 0.01, 0.47, 1);
+  -webkit-transition: color 0.3s cubic-bezier(0.02, 0.01, 0.47, 1),
+    border-color 0.3s cubic-bezier(0.02, 0.01, 0.47, 1);
+  transition: color 0.3s cubic-bezier(0.02, 0.01, 0.47, 1),
+    border-color 0.3s cubic-bezier(0.02, 0.01, 0.47, 1);
 }
 .instanshu-unite:before {
   position: absolute;
@@ -229,15 +230,20 @@
   width: 100%;
   height: 120%;
   background: #d6e3ff;
-  content: '';
+  content: "";
   opacity: 0;
   z-index: -1;
-  -webkit-transition: opacity 0.15s cubic-bezier(0.02, 0.01, 0.47, 1), -webkit-transform 0.15s cubic-bezier(0.02, 0.01, 0.47, 1);
-  transition: opacity 0.15s cubic-bezier(0.02, 0.01, 0.47, 1), -webkit-transform 0.15s cubic-bezier(0.02, 0.01, 0.47, 1);
-  transition: transform 0.15s cubic-bezier(0.02, 0.01, 0.47, 1), opacity 0.15s cubic-bezier(0.02, 0.01, 0.47, 1);
-  transition: transform 0.15s cubic-bezier(0.02, 0.01, 0.47, 1), opacity 0.15s cubic-bezier(0.02, 0.01, 0.47, 1), -webkit-transform 0.15s cubic-bezier(0.02, 0.01, 0.47, 1);
+  -webkit-transition: opacity 0.15s cubic-bezier(0.02, 0.01, 0.47, 1),
+    -webkit-transform 0.15s cubic-bezier(0.02, 0.01, 0.47, 1);
+  transition: opacity 0.15s cubic-bezier(0.02, 0.01, 0.47, 1),
+    -webkit-transform 0.15s cubic-bezier(0.02, 0.01, 0.47, 1);
+  transition: transform 0.15s cubic-bezier(0.02, 0.01, 0.47, 1),
+    opacity 0.15s cubic-bezier(0.02, 0.01, 0.47, 1);
+  transition: transform 0.15s cubic-bezier(0.02, 0.01, 0.47, 1),
+    opacity 0.15s cubic-bezier(0.02, 0.01, 0.47, 1),
+    -webkit-transform 0.15s cubic-bezier(0.02, 0.01, 0.47, 1);
   -webkit-transform: translate3d(-110%, -10%, 0) skewX(-20deg);
-          transform: translate3d(-110%, -10%, 0) skewX(-20deg);
+  transform: translate3d(-110%, -10%, 0) skewX(-20deg);
 }
 .instanshu-unite:after {
   position: absolute;
@@ -245,20 +251,25 @@
   left: 0;
   width: 100%;
   height: 120%;
-  background: rgba(214,227,255,0.7);
-  content: '';
+  background: rgba(214, 227, 255, 0.7);
+  content: "";
   opacity: 0;
   z-index: -1;
-  -webkit-transition: opacity 0.15s cubic-bezier(0.02, 0.01, 0.47, 1), -webkit-transform 0.15s cubic-bezier(0.02, 0.01, 0.47, 1);
-  transition: opacity 0.15s cubic-bezier(0.02, 0.01, 0.47, 1), -webkit-transform 0.15s cubic-bezier(0.02, 0.01, 0.47, 1);
-  transition: transform 0.15s cubic-bezier(0.02, 0.01, 0.47, 1), opacity 0.15s cubic-bezier(0.02, 0.01, 0.47, 1);
-  transition: transform 0.15s cubic-bezier(0.02, 0.01, 0.47, 1), opacity 0.15s cubic-bezier(0.02, 0.01, 0.47, 1), -webkit-transform 0.15s cubic-bezier(0.02, 0.01, 0.47, 1);
+  -webkit-transition: opacity 0.15s cubic-bezier(0.02, 0.01, 0.47, 1),
+    -webkit-transform 0.15s cubic-bezier(0.02, 0.01, 0.47, 1);
+  transition: opacity 0.15s cubic-bezier(0.02, 0.01, 0.47, 1),
+    -webkit-transform 0.15s cubic-bezier(0.02, 0.01, 0.47, 1);
+  transition: transform 0.15s cubic-bezier(0.02, 0.01, 0.47, 1),
+    opacity 0.15s cubic-bezier(0.02, 0.01, 0.47, 1);
+  transition: transform 0.15s cubic-bezier(0.02, 0.01, 0.47, 1),
+    opacity 0.15s cubic-bezier(0.02, 0.01, 0.47, 1),
+    -webkit-transform 0.15s cubic-bezier(0.02, 0.01, 0.47, 1);
   -webkit-transform: translate3d(110%, -10%, 0) skewX(-20deg);
-          transform: translate3d(110%, -10%, 0) skewX(-20deg);
+  transform: translate3d(110%, -10%, 0) skewX(-20deg);
 }
 .instanshu-unite:hover,
 .instanshu-unite:focus {
-  box-shadow: 0 1px 8px rgba(58,51,53,0.3);
+  box-shadow: 0 1px 8px rgba(58, 51, 53, 0.3);
   color: #1d89ff;
   -webkit-transition: all 0.5s cubic-bezier(0.02, 0.01, 0.47, 1);
   transition: all 0.5s cubic-bezier(0.02, 0.01, 0.47, 1);
@@ -266,22 +277,32 @@
 .instanshu-unite:hover:before,
 .instanshu-unite:focus:before {
   opacity: 1;
-  -webkit-transition: opacity 0.25s cubic-bezier(0.02, 0.01, 0.47, 1), -webkit-transform 0.25s cubic-bezier(0.02, 0.01, 0.47, 1);
-  transition: opacity 0.25s cubic-bezier(0.02, 0.01, 0.47, 1), -webkit-transform 0.25s cubic-bezier(0.02, 0.01, 0.47, 1);
-  transition: transform 0.25s cubic-bezier(0.02, 0.01, 0.47, 1), opacity 0.25s cubic-bezier(0.02, 0.01, 0.47, 1);
-  transition: transform 0.25s cubic-bezier(0.02, 0.01, 0.47, 1), opacity 0.25s cubic-bezier(0.02, 0.01, 0.47, 1), -webkit-transform 0.25s cubic-bezier(0.02, 0.01, 0.47, 1);
+  -webkit-transition: opacity 0.25s cubic-bezier(0.02, 0.01, 0.47, 1),
+    -webkit-transform 0.25s cubic-bezier(0.02, 0.01, 0.47, 1);
+  transition: opacity 0.25s cubic-bezier(0.02, 0.01, 0.47, 1),
+    -webkit-transform 0.25s cubic-bezier(0.02, 0.01, 0.47, 1);
+  transition: transform 0.25s cubic-bezier(0.02, 0.01, 0.47, 1),
+    opacity 0.25s cubic-bezier(0.02, 0.01, 0.47, 1);
+  transition: transform 0.25s cubic-bezier(0.02, 0.01, 0.47, 1),
+    opacity 0.25s cubic-bezier(0.02, 0.01, 0.47, 1),
+    -webkit-transform 0.25s cubic-bezier(0.02, 0.01, 0.47, 1);
   -webkit-transform: translate3d(-50%, -10%, 0) skewX(-20deg);
-          transform: translate3d(-50%, -10%, 0) skewX(-20deg);
+  transform: translate3d(-50%, -10%, 0) skewX(-20deg);
 }
 .instanshu-unite:hover:after,
 .instanshu-unite:focus:after {
   opacity: 1;
-  -webkit-transition: opacity 0.25s cubic-bezier(0.02, 0.01, 0.47, 1), -webkit-transform 0.25s cubic-bezier(0.02, 0.01, 0.47, 1);
-  transition: opacity 0.25s cubic-bezier(0.02, 0.01, 0.47, 1), -webkit-transform 0.25s cubic-bezier(0.02, 0.01, 0.47, 1);
-  transition: transform 0.25s cubic-bezier(0.02, 0.01, 0.47, 1), opacity 0.25s cubic-bezier(0.02, 0.01, 0.47, 1);
-  transition: transform 0.25s cubic-bezier(0.02, 0.01, 0.47, 1), opacity 0.25s cubic-bezier(0.02, 0.01, 0.47, 1), -webkit-transform 0.25s cubic-bezier(0.02, 0.01, 0.47, 1);
+  -webkit-transition: opacity 0.25s cubic-bezier(0.02, 0.01, 0.47, 1),
+    -webkit-transform 0.25s cubic-bezier(0.02, 0.01, 0.47, 1);
+  transition: opacity 0.25s cubic-bezier(0.02, 0.01, 0.47, 1),
+    -webkit-transform 0.25s cubic-bezier(0.02, 0.01, 0.47, 1);
+  transition: transform 0.25s cubic-bezier(0.02, 0.01, 0.47, 1),
+    opacity 0.25s cubic-bezier(0.02, 0.01, 0.47, 1);
+  transition: transform 0.25s cubic-bezier(0.02, 0.01, 0.47, 1),
+    opacity 0.25s cubic-bezier(0.02, 0.01, 0.47, 1),
+    -webkit-transform 0.25s cubic-bezier(0.02, 0.01, 0.47, 1);
   -webkit-transform: translate3d(50%, -10%, 0) skewX(-20deg);
-          transform: translate3d(50%, -10%, 0) skewX(-20deg);
+  transform: translate3d(50%, -10%, 0) skewX(-20deg);
 }
 .instanshu-unite.instanshu-xs {
   padding: 3px 8px;
@@ -290,7 +311,7 @@
 }
 .instanshu-unite.instanshu-xs:hover,
 .instanshu-unite.instanshu-xs:focus {
-  box-shadow: 0 1px 4px rgba(58,51,53,0.3);
+  box-shadow: 0 1px 4px rgba(58, 51, 53, 0.3);
 }
 .instanshu-unite.instanshu-sm {
   padding: 4px 10px;
@@ -299,7 +320,7 @@
 }
 .instanshu-unite.instanshu-sm:hover,
 .instanshu-unite.instanshu-sm:focus {
-  box-shadow: 0 1px 6px rgba(58,51,53,0.3);
+  box-shadow: 0 1px 6px rgba(58, 51, 53, 0.3);
 }
 .instanshu-unite.instanshu-md {
   font-size: 20px;
@@ -308,7 +329,7 @@
 }
 .instanshu-unite.instanshu-md:hover,
 .instanshu-unite.instanshu-md:focus {
-  box-shadow: 0 1px 8px rgba(58,51,53,0.3);
+  box-shadow: 0 1px 8px rgba(58, 51, 53, 0.3);
 }
 .instanshu-unite.instanshu-lg {
   padding: 8px 15px;
@@ -317,7 +338,7 @@
 }
 .instanshu-unite.instanshu-lg:hover,
 .instanshu-unite.instanshu-lg:focus {
-  box-shadow: 0 1px 10px rgba(58,51,53,0.3);
+  box-shadow: 0 1px 10px rgba(58, 51, 53, 0.3);
 }
 .instanshu-unite.instanshu-default {
   border-color: #1d89ff;
@@ -409,5 +430,3 @@
 .instanshu-unite.instanshu-royal:after {
   background: #bd2df5;
 }
-
-</style>`
