@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+body{
+    height: 400px;
+    width: 250px;
+    margin: 0;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 0;
+    background: linear-gradient(330deg, #4C4491 0%, #FD5C63 100%);
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+}
+
+#title{
+    margin-left: 30px;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.info{
+    font-size: 16px;
+}
+
+footer{
+    margin-top: 70px;
+    margin-left: 100px;
+}
