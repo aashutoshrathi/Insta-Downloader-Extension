@@ -1,5 +1,8 @@
-chrome.tabs.insertCSS(null, {file: "insta-down-css.css"});
-
-chrome.tabs.onUpdated.addListener(function() {
-  chrome.tabs.executeScript(null, { file: "download.js" });
-});
+chrome.webNavigation.onCompleted.addListener(
+  function(navigationEvent) {
+    let tabId = navigationEvent.tabId;
+    chrome.tabs.insertCSS(tabId, { file: "insta-down-css.css" });
+    chrome.tabs.executeScript(tabId, { file: "download.js" });
+  },
+  { url: [{ hostSuffix: ".instagram.com" }] }
+);
