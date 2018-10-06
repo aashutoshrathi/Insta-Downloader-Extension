@@ -1,9 +1,9 @@
 {
     "name": "Instagram Downloader",
-    "version": "0.1.1",
+    "version": "0.1.3",
     "manifest_version": 2,
     "description": "Injects download buttons to Instagram Media",
-    "homepage_url": "http://aashutoshrathi.co",
+    "homepage_url": "http://git.io/arathi",
     "content_scripts": [
         {
           "matches": ["*://*.instagram.com/*"],
