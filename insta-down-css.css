@@ -430,3 +430,9 @@
 .instanshu-unite.instanshu-royal:after {
   background: #bd2df5;
 }
+.download-buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}

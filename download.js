@@ -102,6 +102,9 @@ function injectButtons() {
     for (let i = 0; i < headers.length; i++) {
       let dlbutton = document.createElement("a");
       let pfbutton = document.createElement("a");
+      let buttonsParent = document.createElement("div");
+
+      buttonsParent.className = "download-buttons"
       dlink = images[2 * i + 1].src;
       dplink = images[2 * i].src;
       if (
@@ -125,9 +128,11 @@ function injectButtons() {
                 style ="margin-right:10px; padding: 4px 1px;">DP<i class="fas fa-arrow-circle-down"></i>
                 </button>`;
 
+      buttonsParent.appendChild(pfbutton);
+      buttonsParent.appendChild(dlbutton);
+
       if (headers[i].querySelectorAll("button").length < 2) {
-        headers[i].appendChild(pfbutton);
-        headers[i].appendChild(dlbutton);
+        headers[i].appendChild(buttonsParent);
       }
       btns = headers[i].querySelectorAll("button");
       if (btns[1] && btns[1].parentElement.href === document.location.href) {
