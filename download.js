@@ -15,11 +15,11 @@ function injectButtons() {
     if (
       buttons[i].innerText === "Follow" ||
       buttons[i].innerText === "Following"
-    ) {
+     ){
       else_profile = true;
     }
     if (buttons[i].innerText === "Edit Profile") {
-      self_profile = true;
+       self_profile = true;
     }
   }
 
@@ -37,12 +37,43 @@ function injectButtons() {
 
   // Grab images appearing on the page
   videos = document.querySelectorAll("video");
+
   let j = 0;
+  var explore_videos=[];
 
   if (explore) {
+
+    // Grab all the videos from explore_sec
+    videos_explore=document.querySelectorAll("span[aria-label='Video']");
+
+    for(let i=0;i<videos_explore.length;i++){
+      //Grab the link of videos
+      let y=videos_explore[i].parentElement.parentElement.parentElement;
+
+      //making a req to open a link
+      var req = new XMLHttpRequest();
+      req.open('GET',y, false);
+      req.send(null);
+      if(req.status == 200)
+      var data = req.responseText;
+
+      //parsing of the resulting page to get video link
+      let parser = new DOMParser();
+      let parsedHtml = parser.parseFromString(data, 'text/html');
+
+      video_link=parsedHtml.querySelectorAll("meta[property='og:video:secure_url']")
+
+      //copying video link in the explore video
+      explore_videos[i]=video_link[0].content;
+
+      console.log(explore_videos[i])
+  }
+
     for (let i = 3; i < images.length; i++) {
       let x = images[i].parentElement.parentElement.parentElement.parentElement;
+
       let db = document.createElement("a");
+
       db.innerHTML = `<a download href=${images[i].src}>
                   <button class="instanshu-unite instanshu-sm instanshu-success" style="left: 100px; top: 10px;">Download</button>`;
       if (x.querySelectorAll("button").length < 1) {
@@ -64,7 +95,9 @@ function injectButtons() {
 
     for (let i = 1; i < images.length; i++) {
       let x = images[i].parentElement.parentElement.parentElement.parentElement;
+
       let db = document.createElement("a");
+
       db.innerHTML = `<a download href=${images[i].src}>
                   <button class="instanshu-unite instanshu-sm instanshu-success" style="left: 100px; top: 10px;">Download</button>`;
       if (x.querySelectorAll("button").length < 1) {
@@ -75,6 +108,7 @@ function injectButtons() {
         btns[0].parentElement.href = images[i].src;
       }
     }
+
   } else if (self_profile) {
     let dlbutton = document.createElement("a");
     dlbutton.innerHTML = `
@@ -111,8 +145,8 @@ function injectButtons() {
         images[2 * i + 1].naturalHeight === 150 ||
         (videos[j] && videos[j].poster === dlink)
       ) {
-        if (videos[j].src) {
-          dlink = videos[j].src;
+        if (videos[j].content) {
+          dlink = videos[j].content;
         }
         j++;
       }
