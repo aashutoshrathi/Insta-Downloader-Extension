@@ -38,12 +38,14 @@ function injectButtons() {
   // Grab images appearing on the page
   videos = document.querySelectorAll("video");
 
+  var z=0;
+
   let j = 0;
   var explore_videos=[];
 
   if (explore) {
 
-    // Grab all the videos from explore_sec
+    // Grab all the videos from explore
     videos_explore=document.querySelectorAll("span[aria-label='Video']");
 
     for(let i=0;i<videos_explore.length;i++){
@@ -66,16 +68,23 @@ function injectButtons() {
       //copying video link in the explore video
       explore_videos[i]=video_link[0].content;
 
-      console.log(explore_videos[i])
+    //  console.log(explore_videos[i])
   }
-
+    z=0;
     for (let i = 3; i < images.length; i++) {
       let x = images[i].parentElement.parentElement.parentElement.parentElement;
+
+      // if it is a video copying the video url in image.src 
+      if(x.getElementsByClassName("Byj2F").length===1){
+        images[i].src=explore_videos[z]
+        z=z+1
+      }
 
       let db = document.createElement("a");
 
       db.innerHTML = `<a download href=${images[i].src}>
                   <button class="instanshu-unite instanshu-sm instanshu-success" style="left: 100px; top: 10px;">Download</button>`;
+
       if (x.querySelectorAll("button").length < 1) {
         x.appendChild(db);
       }
@@ -84,7 +93,8 @@ function injectButtons() {
         btns[0].parentElement.href = images[i].src;
       }
     }
-  } else if (else_profile) {
+  }
+   else if (else_profile) {
     let dlbutton = document.createElement("a");
     dlbutton.innerHTML = `
                 <a download href=${images[0].src}>
@@ -175,6 +185,7 @@ function injectButtons() {
     }
   }
   window.onscroll = function() {
+    z=0;
     refresh();
   };
 }
