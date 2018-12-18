@@ -1,0 +1,13 @@
+{
+    "plugins": [
+        "require"
+    ],
+    "rules": {
+        "camelcase": 2,
+        "no-trailing-spaces": 2,
+
+        "require/require-define": 2,
+        "require/require-array-syntax": 2,
+        "require/require-module-prefix": 2
+    }
+}
