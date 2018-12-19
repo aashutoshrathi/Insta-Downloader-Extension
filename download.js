@@ -58,8 +58,16 @@ function injectButtons() {
     // Grab images appearing on the page
     images = document.querySelectorAll("img");
 
+    for (let i = 0; i < images.length; i++)
+        //making the image link a downloading link
+        images[i].src = images[i].src + "&dl=1"
     // Grab images appearing on the page
     videos = document.querySelectorAll("video");
+    //making the video link as downloading dlink
+    if (videos[i]) {
+        for (let i = 0; i < videos.length; i++)
+            videos[i].src = videos[i].src + "&dl=1"
+    }
     let j = 0;
 
     if (explore) {
@@ -69,10 +77,15 @@ function injectButtons() {
 
             //For downloading video
             if (x.getElementsByClassName("Byj2F").length === 1) {
+                //getting video link
                 y = images[i].parentElement.parentElement.parentElement;
+
+                //get the html content of video link to download video
                 getHTML(y, function(response) {
                     var video = response.querySelectorAll("meta[property='og:video:secure_url']")
                     let db = document.createElement("a");
+                    //making the image link a downloading link
+                    video[0].content = video[0].content + "&dl=1"
 
                     db.innerHTML = `<a download href=${video[0].content}>
                     <button class="instanshu-unite instanshu-sm instanshu-success" style="left: 100px; top: 10px;"> video Download</button>`;
@@ -85,7 +98,6 @@ function injectButtons() {
             //For downloading image
             else {
                 let db = document.createElement("a");
-
 
                 db.innerHTML = `<a download href=${images[i].src}>
                   <button class="instanshu-unite instanshu-sm instanshu-success" style="left: 100px; top: 10px;">Download</button>`;
@@ -115,6 +127,7 @@ function injectButtons() {
                 getHTML(y, function(response) {
                     var video = response.querySelectorAll("meta[property='og:video:secure_url']")
                     let db = document.createElement("a");
+                    video[0].content = video[0].content + "&dl=1"
 
                     db.innerHTML = `<a download href=${video[0].content}>
                     <button class="instanshu-unite instanshu-sm instanshu-success" style="left: 100px; top: 10px;"> video Download</button>`;
@@ -125,7 +138,6 @@ function injectButtons() {
             } else {
 
                 let db = document.createElement("a");
-
                 db.innerHTML = `<a download href=${images[i].src}>
                   <button class="instanshu-unite instanshu-sm instanshu-success" style="left: 100px; top: 10px;">Download</button>`;
                 if (x.querySelectorAll("button").length < 1) {
@@ -153,6 +165,7 @@ function injectButtons() {
                 getHTML(y, function(response) {
                     var video = response.querySelectorAll("meta[property='og:video:secure_url']")
                     let db = document.createElement("a");
+                    video[0].content = video[0].content + "&dl=1"
 
                     db.innerHTML = `<a download href=${video[0].content}>
                     <button class="instanshu-unite instanshu-sm instanshu-success" style="left: 100px; top: 10px;"> video Download</button>`;
@@ -162,7 +175,6 @@ function injectButtons() {
 
                 });
             } else {
-
                 let db = document.createElement("a");
                 db.innerHTML = `<a download href=${images[i].src}>
                   <button class="instanshu-unite instanshu-sm instanshu-success" style="left: 100px; top: 10px;">Download</button>`;
