@@ -10,7 +10,6 @@ const getHTML = function gethtml (url, callback) {
   if (!window.XMLHttpRequest) return
 
   // Create new request
-  var XMLHttpRequest = require('xmlhttprequest').XMLHttpRequest
   const xhr = new XMLHttpRequest()
 
   // Setup callback
