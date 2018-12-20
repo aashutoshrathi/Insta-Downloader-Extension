@@ -13,20 +13,21 @@ body {
 }
 
 #title {
-  margin-left: 30px;
+  text-align: center;
   font-weight: bold;
   font-size: 30px;
 }
 
 #badges{
-  margin-left: 35px;
+  text-align: center;
 }
 
 .info {
+  text-align: center;
   font-size: 16px;
 }
 
 footer {
   margin-top: 25px;
-  margin-left: 100px;
+  text-align: center;
 }
