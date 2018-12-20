@@ -97,7 +97,6 @@ function injectButtons() {
           }
         });
       } else {
-        debugger;
         const db = document.createElement('a');
         db.innerHTML = `<a download href=${images[i].src}>
                   <button class="instanshu-unite instanshu-sm instanshu-success" style="left: 100px; top: 10px;">Download</button>`;
@@ -140,7 +139,6 @@ function injectButtons() {
           }
         });
       } else {
-        debugger;
         const db = document.createElement('a');
         if (images[i].className === '_6q-tv' && images[i].height === 50) {
           db.innerHTML = `<a download href=${images[i].src}>
