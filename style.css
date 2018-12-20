@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat");
 
 body {
-  height: 300px;
+  height: 350px;
   width: 250px;
   margin: 0;
   margin-left: 10px;
@@ -16,6 +16,10 @@ body {
   margin-left: 30px;
   font-weight: bold;
   font-size: 30px;
+}
+
+#badges{
+  margin-left: 35px;
 }
 
 .info {
