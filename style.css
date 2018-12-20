@@ -31,3 +31,14 @@ footer {
   margin-top: 25px;
   text-align: center;
 }
+
+hr{
+  border: none;
+  height:0.05rem;
+  background-color: white;
+  color: white;
+}
+
+a{
+  text-decoration: none;
+}
