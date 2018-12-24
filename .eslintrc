@@ -1,13 +1,39 @@
 {
-    "plugins": [
-        "require"
-    ],
-    "rules": {
-        "camelcase": 2,
-        "no-trailing-spaces": 2,
-
-        "require/require-define": 2,
-        "require/require-array-syntax": 2,
-        "require/require-module-prefix": 2
+  "extends": "eslint:recommended",
+  "plugins": ["prettier"],
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaVersion": 2016,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
     }
+  },
+  "env": {
+    "es6": true,
+    "browser": true,
+    "node": true
+  },
+  "rules": {
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [".js", ".jsx"]
+      }
+    ],
+    "semi": ["error", "never"],
+    "camelcase": 2,
+    "no-trailing-spaces": 2
+    // "space-before-function-paren": [
+    //   "error",
+    //   {
+    //     "anonymous": "never",
+    //     "named": "never",
+    //     "asyncArrow": "always"
+    //   }
+    // ]
+    // "require/require-define": 2,
+    // "require/require-array-syntax": 2,
+    // "require/require-module-prefix": 2
+  }
 }
