@@ -137,6 +137,7 @@
 .instaashu-material-circle.instaashu-success {
   background: #28b78d;
   color: #fff;
+  outline: none;
 }
 .instaashu-material-circle.instaashu-royal {
   background: #bd2df5;
@@ -230,7 +231,7 @@
   width: 100%;
   height: 120%;
   background: #d6e3ff;
-  content: "";
+  content: '';
   opacity: 0;
   z-index: -1;
   -webkit-transition: opacity 0.15s cubic-bezier(0.02, 0.01, 0.47, 1),
@@ -252,7 +253,7 @@
   width: 100%;
   height: 120%;
   background: rgba(214, 227, 255, 0.7);
-  content: "";
+  content: '';
   opacity: 0;
   z-index: -1;
   -webkit-transition: opacity 0.15s cubic-bezier(0.02, 0.01, 0.47, 1),
@@ -403,6 +404,7 @@
 .instanshu-unite.instanshu-success {
   border-color: #28b78d;
   color: #28b78d;
+  outline: none;
 }
 .instanshu-unite.instanshu-success:hover,
 .instanshu-unite.instanshu-success:focus {

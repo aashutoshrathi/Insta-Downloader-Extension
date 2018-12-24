@@ -35,7 +35,9 @@ function injectButtons () {
 
   for (i = 0; i < buttons.length; i += 1) {
     if (
-      document.getElementsByClassName('glyphsSpriteMore_horizontal__outline__24__grey_9 u-__7').length === 1
+      document.getElementsByClassName(
+        'glyphsSpriteMore_horizontal__outline__24__grey_9 u-__7'
+      ).length === 1
     ) {
       elseProfile = true
       console.log('%c Some Profile ', 'background: #222; color: #bada55')
@@ -71,7 +73,8 @@ function injectButtons () {
 
   if (videos[0]) {
     for (i = 0; i < videos.length; i += 1) {
-      videos[i].src = `${videos[i].src}&dl=1`
+      videos[i].poster = `${videos[i].poster}&dl=1`
+      videos[i].src = `${videos[i].currentSrc}&dl=1`
     }
   }
   let j = 0
@@ -212,10 +215,7 @@ function injectButtons () {
       buttonsParent.className = 'download-buttons'
       let dlink = images[2 * i + 1].src
       const dplink = images[2 * i].src
-      if (
-        images[2 * i + 1].naturalHeight === 150 ||
-        (videos[j] && videos[j].poster === dlink)
-      ) {
+      if (videos[j] && videos[j].poster === dlink) {
         if (videos[j].src) {
           dlink = videos[j].src
         }
