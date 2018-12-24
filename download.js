@@ -5,7 +5,7 @@ link.rel = 'stylesheet'
 document.getElementsByTagName('head')[0].appendChild(link)
 let i = 0
 
-console.log('%c Hello Developer! ', 'background: #222; color: #bada55')
+console.log('%c Hello Developer!\n Star us here: https://github.com/aashutoshrathi/Insta-Downloader-Extension', 'background: #222; color: #bada55')
 const getHTML = function gethtml (url, callback) {
   // Feature detection
   if (!window.XMLHttpRequest) return
@@ -217,24 +217,25 @@ function injectButtons () {
 
       buttonsParent.className = 'download-buttons'
       let dlink = images[2 * i + 1].src
-      const dplink = images[2 * i].src
-      if (
-        images[2 * i + 1].naturalHeight === 150 ||
-        (videos[j] && videos[j].poster === dlink)
-      ) {
+      let dplink = images[2 * i].src
+      let label = 'Download'
+      if ((videos[j] && videos[j].poster === dlink) || images.className === '_6q-tv') {
         /**
          * @todo Fix the Video Links in Main Page
          * @body For some reason, it gives poster link in current scenario and also order of links are not correct.
          */
         if (videos[j] && videos[j].src) {
           dlink = videos[j].src
+          label = 'Download Video'
         }
         j += 1
       }
 
+      // console.log(dlink)
+
       dlbutton.innerHTML = `
                 <a download href=${dlink}>
-                <button class="instanshu-unite instanshu-sm instanshu-success">Download</button></a>`
+                <button class="instanshu-unite instanshu-sm instanshu-success">${label}</button></a>`
 
       pfbutton.innerHTML = `
                 <a download href=${dplink}>
