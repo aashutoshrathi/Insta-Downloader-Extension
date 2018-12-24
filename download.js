@@ -5,6 +5,7 @@ link.rel = 'stylesheet'
 document.getElementsByTagName('head')[0].appendChild(link)
 let i = 0
 
+console.log('%c Hello Developer! ', 'background: #222; color: #bada55')
 const getHTML = function gethtml (url, callback) {
   // Feature detection
   if (!window.XMLHttpRequest) return
@@ -27,26 +28,30 @@ const getHTML = function gethtml (url, callback) {
 
 function injectButtons () {
   const buttons = document.querySelectorAll('button')
-  let ElseProfile = false
-  let SelfProfile = false
+  let elseProfile = false
+  let selfProfile = false
   let explore = false
   const headings = document.querySelectorAll('h2')
 
   for (i = 0; i < buttons.length; i += 1) {
     if (
-      buttons[i].innerText === 'Follow' ||
-      buttons[i].innerText === 'Following'
+      document.getElementsByClassName('glyphsSpriteMore_horizontal__outline__24__grey_9 u-__7').length === 1
     ) {
-      ElseProfile = true
+      elseProfile = true
+      console.log('%c Some Profile ', 'background: #222; color: #bada55')
+      break
     }
     if (buttons[i].innerText === 'Edit Profile') {
-      SelfProfile = true
+      selfProfile = true
+      console.log('%c Your Profile', 'background: #222; color: #bada55')
+      break
     }
   }
 
   for (i = 0; i < headings.length; i += 1) {
     if (headings[i].innerText === 'Explore') {
       explore = true
+      break
     }
   }
 
@@ -109,7 +114,7 @@ function injectButtons () {
         }
       }
     }
-  } else if (ElseProfile) {
+  } else if (elseProfile) {
     const dlbutton = document.createElement('a')
     dlbutton.innerHTML = `
                 <a download href=${images[0].src}>
@@ -156,7 +161,7 @@ function injectButtons () {
         }
       }
     }
-  } else if (SelfProfile) {
+  } else if (selfProfile) {
     const dlbutton = document.createElement('a')
     dlbutton.innerHTML = `
                 <a download href=${images[0].src}>
@@ -198,6 +203,7 @@ function injectButtons () {
     }
   } else {
     // Iterate through the headers and inject a button to download corresponding image
+    console.log('%c Main Page', 'background: #222; color: #bada55')
     for (i = 0; i < headers.length; i += 1) {
       const dlbutton = document.createElement('a')
       const pfbutton = document.createElement('a')
