@@ -78,8 +78,12 @@ function injectButtons () {
 
   if (videos[0]) {
     for (i = 0; i < videos.length; i += 1) {
-      videos[i].poster = `${videos[i].poster}&dl=1`
-      videos[i].src = `${videos[i].currentSrc}&dl=1`
+      if (!videos[i].src.endsWith('&dl=1')) {
+        videos[i].src = `${videos[i].currentSrc}&dl=1`
+      }
+      if (!videos[i].poster.endsWith('&dl=1')) {
+        videos[i].poster = `${videos[i].poster}&dl=1`
+      }
     }
   }
   let j = 0
