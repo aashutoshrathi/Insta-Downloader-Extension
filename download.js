@@ -5,7 +5,10 @@ link.rel = 'stylesheet'
 document.getElementsByTagName('head')[0].appendChild(link)
 let i = 0
 
-console.log('%c Hello Developer! ', 'background: #222; color: #bada55')
+console.log(
+  '%c Hello Developer!\n Star us here: https://github.com/aashutoshrathi/Insta-Downloader-Extension',
+  'background: #222; color: #bada55'
+)
 const getHTML = function gethtml (url, callback) {
   // Feature detection
   if (!window.XMLHttpRequest) return
@@ -65,11 +68,13 @@ function injectButtons () {
 
   for (i = 0; i < images.length; i += 1) {
     // making the image link a downloading link
-    images[i].src = `${images[i].src}&dl=1`
+    if (!images[i].src.endsWith('&dl=1')) {
+      images[i].src = `${images[i].src}&dl=1`
+    }
   }
-  // Grab images appearing on the page
+  // // Grab images appearing on the page
   const videos = document.querySelectorAll('video')
-  // making the video link as downloading dlink
+  // // making the video link as downloading dlink
 
   if (videos[0]) {
     for (i = 0; i < videos.length; i += 1) {
@@ -79,6 +84,7 @@ function injectButtons () {
   }
   let j = 0
 
+  // Explore Page
   if (explore) {
     for (i = 3; i < images.length; i += 1) {
       const x =
@@ -118,6 +124,7 @@ function injectButtons () {
       }
     }
   } else if (elseProfile) {
+    // Someone else's profile
     const dlbutton = document.createElement('a')
     dlbutton.innerHTML = `
                 <a download href=${images[0].src}>
@@ -205,6 +212,7 @@ function injectButtons () {
       }
     }
   } else {
+    // Handle main page here
     // Iterate through the headers and inject a button to download corresponding image
     console.log('%c Main Page', 'background: #222; color: #bada55')
     for (i = 0; i < headers.length; i += 1) {
@@ -214,24 +222,32 @@ function injectButtons () {
 
       buttonsParent.className = 'download-buttons'
       let dlink = images[2 * i + 1].src
-      const dplink = images[2 * i].src
+      let dplink = images[2 * i].src
+      let label = 'Download'
       if (videos[j] && videos[j].poster === dlink) {
-        if (videos[j].src) {
+        /**
+         * @todo Fix the Video Links in Main Page
+         * @body For some reason, it gives poster link in current scenario and also order of links are not correct.
+         */
+        if (videos[j] && videos[j].src) {
           dlink = videos[j].src
+          label = 'Download Video'
         }
         j += 1
       }
 
+      // console.log(dlink)
+
       dlbutton.innerHTML = `
                 <a download href=${dlink}>
-                <button class="instanshu-unite instanshu-sm instanshu-success">Download</button>`
+                <button class="instanshu-unite instanshu-sm instanshu-success">${label}</button></a>`
 
       pfbutton.innerHTML = `
                 <a download href=${dplink}>
                 <button class="instaashu-material-circle instaashu-sm
                 instaashu-success instaashu-no-outline"
                 style ="margin-right:10px; padding: 4px 1px;">DP<i class="fas fa-arrow-circle-down"></i>
-                </button>`
+                </button></a>`
 
       buttonsParent.appendChild(pfbutton)
       buttonsParent.appendChild(dlbutton)
