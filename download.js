@@ -5,7 +5,10 @@ link.rel = 'stylesheet'
 document.getElementsByTagName('head')[0].appendChild(link)
 let i = 0
 
-console.log('%c Hello Developer!\n Star us here: https://github.com/aashutoshrathi/Insta-Downloader-Extension', 'background: #222; color: #bada55')
+console.log(
+  '%c Hello Developer!\n Star us here: https://github.com/aashutoshrathi/Insta-Downloader-Extension',
+  'background: #222; color: #bada55'
+)
 const getHTML = function gethtml (url, callback) {
   // Feature detection
   if (!window.XMLHttpRequest) return
@@ -35,7 +38,9 @@ function injectButtons () {
 
   for (i = 0; i < buttons.length; i += 1) {
     if (
-      document.getElementsByClassName('glyphsSpriteMore_horizontal__outline__24__grey_9 u-__7').length === 1
+      document.getElementsByClassName(
+        'glyphsSpriteMore_horizontal__outline__24__grey_9 u-__7'
+      ).length === 1
     ) {
       elseProfile = true
       console.log('%c Some Profile ', 'background: #222; color: #bada55')
@@ -74,7 +79,10 @@ function injectButtons () {
   if (videos[0]) {
     for (i = 0; i < videos.length; i += 1) {
       if (!videos[i].src.endsWith('&dl=1')) {
-        videos[i].src = `${videos[i].src}&dl=1`
+        videos[i].src = `${videos[i].currentSrc}&dl=1`
+      }
+      if (!videos[i].poster.endsWith('&dl=1')) {
+        videos[i].poster = `${videos[i].poster}&dl=1`
       }
     }
   }
@@ -119,7 +127,8 @@ function injectButtons () {
         }
       }
     }
-  } else if (elseProfile) { // Someone else's profile
+  } else if (elseProfile) {
+    // Someone else's profile
     const dlbutton = document.createElement('a')
     dlbutton.innerHTML = `
                 <a download href=${images[0].src}>
@@ -219,7 +228,7 @@ function injectButtons () {
       let dlink = images[2 * i + 1].src
       let dplink = images[2 * i].src
       let label = 'Download'
-      if ((videos[j] && videos[j].poster === dlink) || images.className === '_6q-tv') {
+      if (videos[j] && videos[j].poster === dlink) {
         /**
          * @todo Fix the Video Links in Main Page
          * @body For some reason, it gives poster link in current scenario and also order of links are not correct.
