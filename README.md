@@ -2,6 +2,9 @@
 
 <h1 align="center"> Instagram Downloader </h1> 
 <p align="center">
+<a href="https://travis-ci.org/aashutoshrathi/Insta-Downloader-Extension">
+    <img src="https://img.shields.io/travis/aashutoshrathi/Insta-Downloader-Extension/master.svg?style=for-the-badge" align="center">
+</a>
 <a href="https://addons.mozilla.org/en-US/firefox/addon/instagram-media-downloader/">
     <img src="https://img.shields.io/amo/d/instagram-media-downloader.svg?style=for-the-badge" align="center">
 </a>
