@@ -1,5 +1,16 @@
-function escapeHTML (str) { return str.replace(/[&"'<>]/g, (m) => escapeHTML.replacements[m]) }
-escapeHTML.replacements = { '&': '&amp;', '"': '&quot;', "'": '&#39;', '<': '&lt;', '>': '&gt;' }
+/* eslint no-undef: "error" */
+/* eslint-env browser */
+
+function escapeHTML (str) {
+  return str.replace(/[&"'<>]/g, m => escapeHTML.replacements[m])
+}
+escapeHTML.replacements = {
+  '&': '&amp;',
+  '"': '&quot;',
+  "'": '&#39;',
+  '<': '&lt;',
+  '>': '&gt;'
+}
 
 const link = document.createElement('link')
 link.href = chrome.extension.getURL('insta-down-css.css')
@@ -247,7 +258,9 @@ function injectButtons () {
 
       dlbutton.innerHTML = `
                 <a download href=${escapeHTML(dlink)}>
-                <button class="instanshu-unite instanshu-sm instanshu-success">${escapeHTML(label)}</button></a>`
+                <button class="instanshu-unite instanshu-sm instanshu-success">${escapeHTML(
+    label
+  )}</button></a>`
 
       pfbutton.innerHTML = `
                 <a download href=${escapeHTML(dplink)}>
