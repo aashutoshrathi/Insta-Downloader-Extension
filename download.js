@@ -243,7 +243,7 @@ function injectButtons () {
       const dlbutton = document.createElement('a')
       const pfbutton = document.createElement('a')
       const buttonsParent = document.createElement('div')
-      const downloadButton = document.createElement('span')
+      // const downloadButton = document.createElement('span')
 
       buttonsParent.className = 'download-buttons'
       let dlink = images[2 * i + 1].src
@@ -279,7 +279,7 @@ function injectButtons () {
                 </button></a>`
 
       buttonsParent.appendChild(pfbutton)
-      downloadButton.appendChild(dlbutton)
+      // downloadButton.appendChild(dlbutton)
 
       if (headers[i].querySelectorAll('button').length < 1) {
         headers[i].appendChild(buttonsParent)
@@ -296,8 +296,6 @@ function injectButtons () {
       const downloadButton = document.createElement('span')
 
       let dlink = images[2 * i + 1].src
-      let dplink = images[2 * i].src
-      let label = 'Download'
       if (videos[j] && videos[j].poster === dlink) {
         /**
          * @todo Fix the Video Links in Main Page
@@ -305,12 +303,9 @@ function injectButtons () {
          */
         if (videos[j] && videos[j].src) {
           dlink = videos[j].src
-          label = 'Download Video'
         }
         j += 1
       }
-
-      // console.log(dlink)
 
       dlbutton.innerHTML = `
                 <a download href=${escapeHTML(dlink)}>
@@ -324,6 +319,7 @@ function injectButtons () {
 
       const btns = sections[i].querySelectorAll('span')
       if (btns[i].className === 'download-btn') {
+        console.log(btns)
       } else {
         if (btns.length === 6) {
           if (sections[i].querySelectorAll('span').length < 7) {
