@@ -59,4 +59,4 @@ typings/
 
 # Thumbs.db
 *.db
-
+node_modules
