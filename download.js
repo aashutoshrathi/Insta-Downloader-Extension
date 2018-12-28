@@ -252,7 +252,7 @@ function injectButtons () {
       if (videos[j] && videos[j].poster === dlink) {
         if (videos[j] && videos[j].src) {
           dlink = videos[j].src
-          label = 'Download Video'
+          // label = 'Download Video'
         }
         j += 1
       }
