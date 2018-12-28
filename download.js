@@ -77,12 +77,18 @@ function injectButtons () {
   // Grab header elements in each post or profile
   const headers = document.querySelectorAll('header')
 
+  // Grab section in each post
+  const sections = document.getElementsByClassName('ltpMr')
+
   // Grab images appearing on the page
   const images = document.querySelectorAll('img')
 
   for (i = 0; i < images.length; i += 1) {
     // making the image link a downloading link
-    if (!images[i].src.endsWith('&dl=1')) {
+    if (
+      !images[i].src.endsWith('&dl=1') &&
+      images[i].className !== 'download-icon'
+    ) {
       images[i].src = `${images[i].src}&dl=1`
     }
   }
@@ -237,6 +243,7 @@ function injectButtons () {
       const dlbutton = document.createElement('a')
       const pfbutton = document.createElement('a')
       const buttonsParent = document.createElement('div')
+      const downloadButton = document.createElement('span')
 
       buttonsParent.className = 'download-buttons'
       let dlink = images[2 * i + 1].src
@@ -256,11 +263,13 @@ function injectButtons () {
 
       // console.log(dlink)
 
-      dlbutton.innerHTML = `
-                <a download href=${escapeHTML(dlink)}>
-                <button class="instanshu-unite instanshu-sm instanshu-success">${escapeHTML(
-    label
-  )}</button></a>`
+      // dlbutton.innerHTML = `
+      //           <a download href=${escapeHTML(dlink)}>
+      //           <button class="download-button instanshu-unite instanshu-sm instanshu-success">
+      //             <img
+      //               class="download-icon"
+      //               src="https://img.icons8.com/ios/50/000000/installing-updates.png" width=29>
+      //           </button></a>`
 
       pfbutton.innerHTML = `
                 <a download href=${escapeHTML(dplink)}>
@@ -270,12 +279,62 @@ function injectButtons () {
                 </button></a>`
 
       buttonsParent.appendChild(pfbutton)
-      buttonsParent.appendChild(dlbutton)
+      downloadButton.appendChild(dlbutton)
 
-      if (headers[i].querySelectorAll('button').length < 2) {
+      if (headers[i].querySelectorAll('button').length < 1) {
         headers[i].appendChild(buttonsParent)
       }
       const btns = headers[i].querySelectorAll('button')
+      if (btns[1] && btns[1].parentElement.href === document.location.href) {
+        btns[1].parentElement.href = dlink
+      }
+    }
+
+    for (i = 0; i < sections.length; i += 1) {
+      const dlbutton = document.createElement('a')
+      dlbutton.className = 'download-btn'
+      const downloadButton = document.createElement('span')
+
+      let dlink = images[2 * i + 1].src
+      let dplink = images[2 * i].src
+      let label = 'Download'
+      if (videos[j] && videos[j].poster === dlink) {
+        /**
+         * @todo Fix the Video Links in Main Page
+         * @body For some reason, it gives poster link in current scenario and also order of links are not correct.
+         */
+        if (videos[j] && videos[j].src) {
+          dlink = videos[j].src
+          label = 'Download Video'
+        }
+        j += 1
+      }
+
+      // console.log(dlink)
+
+      dlbutton.innerHTML = `
+                <a download href=${escapeHTML(dlink)}>
+                <button class="download-button instanshu-unite instanshu-sm instanshu-success">
+                  <img
+                    class="download-icon"
+                    src="https://img.icons8.com/ios/50/000000/installing-updates.png" width=29>
+                </button></a>`
+
+      downloadButton.appendChild(dlbutton)
+
+      const btns = sections[i].querySelectorAll('span')
+      if (btns[i].className === 'download-btn') {
+      } else {
+        if (btns.length === 6) {
+          if (sections[i].querySelectorAll('span').length < 7) {
+            sections[i].insertBefore(downloadButton, btns[4])
+          }
+        } else {
+          if (sections[i].querySelectorAll('span').length < 9) {
+            sections[i].insertBefore(downloadButton, btns[6])
+          }
+        }
+      }
       if (btns[1] && btns[1].parentElement.href === document.location.href) {
         btns[1].parentElement.href = dlink
       }

@@ -438,3 +438,11 @@
   align-items: center;
   justify-content: space-around;
 }
+
+.download-button {
+  border: none;
+}
+
+.download-button:hover, .download-button:focus {
+  transition: none;
+}
