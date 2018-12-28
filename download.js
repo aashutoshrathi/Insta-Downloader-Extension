@@ -272,7 +272,6 @@ function injectButtons () {
       const downloadButton = document.createElement('span')
 
       let dlink = images[2 * i + 1].src
-      debugger
       if (videos[j] && videos[j].poster === dlink) {
         if (videos[j] && videos[j].src) {
           dlink = videos[j].src
