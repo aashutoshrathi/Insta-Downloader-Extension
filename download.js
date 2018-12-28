@@ -87,7 +87,8 @@ function injectButtons () {
     // making the image link a downloading link
     if (
       !images[i].src.endsWith('&dl=1') &&
-      images[i].className !== 'download-icon'
+      images[i].className !== 'download-icon' &&
+      images[i].className !== 'download-video-icon'
     ) {
       images[i].src = `${images[i].src}&dl=1`
     }
@@ -240,32 +241,12 @@ function injectButtons () {
     // Iterate through the headers and inject a button to download corresponding image
     console.log('%c Main Page', 'background: #222; color: #bada55')
     for (i = 0; i < headers.length; i += 1) {
-      // const dlbutton = document.createElement('a')
       const pfbutton = document.createElement('a')
       const buttonsParent = document.createElement('div')
-      // const downloadButton = document.createElement('span')
 
       buttonsParent.className = 'download-buttons'
       let dlink = images[2 * i + 1].src
       let dplink = images[2 * i].src
-      // let label = 'Download'
-      if (videos[j] && videos[j].poster === dlink) {
-        if (videos[j] && videos[j].src) {
-          dlink = videos[j].src
-          // label = 'Download Video'
-        }
-        j += 1
-      }
-
-      // console.log(dlink)
-
-      // dlbutton.innerHTML = `
-      //           <a download href=${escapeHTML(dlink)}>
-      //           <button class="download-button instanshu-unite instanshu-sm instanshu-success">
-      //             <img
-      //               class="download-icon"
-      //               src="https://img.icons8.com/ios/50/000000/installing-updates.png" width=29>
-      //           </button></a>`
 
       pfbutton.innerHTML = `
                 <a download href=${escapeHTML(dplink)}>
@@ -275,7 +256,6 @@ function injectButtons () {
                 </button></a>`
 
       buttonsParent.appendChild(pfbutton)
-      // downloadButton.appendChild(dlbutton)
 
       if (headers[i].querySelectorAll('button').length < 1) {
         headers[i].appendChild(buttonsParent)
@@ -292,26 +272,34 @@ function injectButtons () {
       const downloadButton = document.createElement('span')
 
       let dlink = images[2 * i + 1].src
+      debugger
       if (videos[j] && videos[j].poster === dlink) {
         if (videos[j] && videos[j].src) {
           dlink = videos[j].src
+          dlbutton.innerHTML = `
+                <a download href=${escapeHTML(dlink)}>
+                <button class="dCJp8 afkep _0mzm-">
+                  <img
+                    class="download-video-icon"
+                    src="https://img.icons8.com/ios/50/000000/sending-video-frames.png" width=29>
+                </button></a>`
         }
         j += 1
-      }
-
-      dlbutton.innerHTML = `
+      } else {
+        dlbutton.innerHTML = `
                 <a download href=${escapeHTML(dlink)}>
-                <button class="download-button instanshu-unite instanshu-sm instanshu-success">
+                <button class="dCJp8 afkep _0mzm-">
                   <img
                     class="download-icon"
                     src="https://img.icons8.com/ios/50/000000/installing-updates.png" width=29>
                 </button></a>`
+      }
 
       downloadButton.appendChild(dlbutton)
 
       const btns = sections[i].querySelectorAll('span')
-      if (btns[i].className === 'download-btn') {
-        console.log(btns)
+      if (btns[i].className === '') {
+        // console.log(btns)
       } else {
         if (btns.length === 6) {
           if (sections[i].querySelectorAll('span').length < 7) {
