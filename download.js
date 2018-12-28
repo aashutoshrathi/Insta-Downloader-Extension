@@ -250,10 +250,6 @@ function injectButtons () {
       let dplink = images[2 * i].src
       let label = 'Download'
       if (videos[j] && videos[j].poster === dlink) {
-        /**
-         * @todo Fix the Video Links in Main Page
-         * @body For some reason, it gives poster link in current scenario and also order of links are not correct.
-         */
         if (videos[j] && videos[j].src) {
           dlink = videos[j].src
           label = 'Download Video'
@@ -297,10 +293,6 @@ function injectButtons () {
 
       let dlink = images[2 * i + 1].src
       if (videos[j] && videos[j].poster === dlink) {
-        /**
-         * @todo Fix the Video Links in Main Page
-         * @body For some reason, it gives poster link in current scenario and also order of links are not correct.
-         */
         if (videos[j] && videos[j].src) {
           dlink = videos[j].src
         }
