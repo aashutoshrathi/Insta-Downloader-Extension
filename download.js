@@ -240,7 +240,7 @@ function injectButtons () {
     // Iterate through the headers and inject a button to download corresponding image
     console.log('%c Main Page', 'background: #222; color: #bada55')
     for (i = 0; i < headers.length; i += 1) {
-      const dlbutton = document.createElement('a')
+      // const dlbutton = document.createElement('a')
       const pfbutton = document.createElement('a')
       const buttonsParent = document.createElement('div')
       // const downloadButton = document.createElement('span')
@@ -248,7 +248,7 @@ function injectButtons () {
       buttonsParent.className = 'download-buttons'
       let dlink = images[2 * i + 1].src
       let dplink = images[2 * i].src
-      let label = 'Download'
+      // let label = 'Download'
       if (videos[j] && videos[j].poster === dlink) {
         if (videos[j] && videos[j].src) {
           dlink = videos[j].src
