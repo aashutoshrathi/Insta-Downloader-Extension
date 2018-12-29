@@ -323,7 +323,12 @@ function handleDownloadAll () {
   }
   document.getElementById('downloadAll').addEventListener('click', downloader)
   function downloader () {
+    var zip = new JSZip()
+    var count = 0
+    var savedPosts = 'savedPosts.zip'
     const images = document.querySelectorAll('img')
+    var urls = []
+    console.log('%c Getting Images', 'background: #222; color: #bada55')
     for (i = 0; i < images.length; i += 1) {
       // making the image link a downloading link
       if (!images[i].src.endsWith('&dl=1')) {
@@ -331,13 +336,31 @@ function handleDownloadAll () {
       }
     }
     if (downloadAlltrigger === 1) {
+      console.log('%c Getting Images', 'background: #222; color: #bada55')
       for (i = 0; i < images.length; i += 1) {
         var link = images[i].src
-        window.open(link)
+        urls.push(link)
       }
-      downloadAlltrigger = 0
+      console.log('%c Getting Images', 'background: #222; color: #bada55')
+      urls.forEach(function (url, index) {
+        var filename = index + '.jpg'
+        // loading a file and add it in a zip file
+        JSZipUtils.getBinaryContent(url, function (err, data) {
+          if (err) {
+            throw err // or handle the error
+          }
+          zip.file(filename, data, { binary: true })
+          count++
+          console.log(count, urls.length)
+          if (count === urls.length) {
+            zip.generateAsync({ type: 'blob' }).then(function (content) {
+              saveAs(content, savedPosts)
+            })
+          }
+        })
+        downloadAlltrigger = 0
+      })
     }
   }
 }
-
 injectButtons()
