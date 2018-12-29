@@ -18,6 +18,7 @@ link.type = 'text/css'
 link.rel = 'stylesheet'
 document.getElementsByTagName('head')[0].appendChild(link)
 let i = 0
+let downloadAlltrigger = 1
 
 console.log(
   '%c Hello Developer!\n Star us here: https://github.com/aashutoshrathi/Insta-Downloader-Extension',
@@ -47,6 +48,7 @@ function injectButtons () {
   const buttons = document.querySelectorAll('button')
   let elseProfile = false
   let selfProfile = false
+  let selfProfileSavedTab = false
   let explore = false
   const headings = document.querySelectorAll('h2')
 
@@ -64,6 +66,13 @@ function injectButtons () {
       selfProfile = true
       console.log('%c Your Profile', 'background: #222; color: #bada55')
       break
+    }
+    if (
+      document.querySelector('.coreSpriteDesktopProfileSaveActive'
+      ) !== null
+    ) {
+      selfProfileSavedTab = true
+      console.log('%c Your Profile Saved Tab', 'background: #222; color: #bada55')
     }
   }
 
@@ -86,7 +95,7 @@ function injectButtons () {
       images[i].src = `${images[i].src}&dl=1`
     }
   }
-  // // Grab images appearing on the page
+  // // Grab videos appearing on the page
   const videos = document.querySelectorAll('video')
   // // making the video link as downloading dlink
 
@@ -216,6 +225,7 @@ function injectButtons () {
             x.appendChild(db)
           }
         })
+
       } else {
         const db = document.createElement('a')
         db.innerHTML = `<a download href=${escapeHTML(images[i].src)}>
@@ -227,6 +237,12 @@ function injectButtons () {
         if (btns[0] && btns[0].parentElement.href === document.location.href) {
           btns[0].parentElement.href = images[i].src
         }
+      }
+
+      // Here we will handle saved Tab
+      if ( selfProfileSavedTab ) {
+        console.log('%c Profile Saved Tab', 'background: #222; color: #bada55')
+        handleDownloadAll();
       }
     }
   } else {
@@ -289,6 +305,41 @@ function injectButtons () {
 function refresh () {
   // as we only can have 8 articles at a time.
   injectButtons()
+  downloadAlltrigger = 1;
+}
+
+function handleDownloadAll () {
+    // check if download all button is there if
+    // not there add it.
+    var DownloadAllButton = document.querySelectorAll('.vtbgv a')
+    const headers = document.querySelectorAll('header')
+
+    if (DownloadAllButton.length < 7) {
+      console.log('%c Adding Download All Button', 'background: #222; color: #bada55')
+      const alldlbutton = document.createElement('a')
+      alldlbutton.innerHTML = `
+                <a href="javascript:void(0);">
+                <button id="downloadAll" class="instanshu-unite instanshu-sm instanshu-success">Download All</button></a>`
+      headers[0].appendChild(alldlbutton)
+    }
+    document.getElementById('downloadAll').addEventListener("click", downloader);
+    function downloader() {
+
+      const images = document.querySelectorAll('img')
+      for (i = 0; i < images.length; i += 1) {
+        // making the image link a downloading link
+        if (!images[i].src.endsWith('&dl=1')) {
+          images[i].src = `${images[i].src}&dl=1`
+        }
+      }
+      if (downloadAlltrigger === 1) {
+        for (i = 0; i < images.length; i += 1) {
+          var link = images[i].src;
+          window.open(link);
+        }
+        downloadAlltrigger = 0
+      }
+    }
 }
 
 injectButtons()
