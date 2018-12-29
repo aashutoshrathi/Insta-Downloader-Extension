@@ -225,7 +225,6 @@ function injectButtons () {
             x.appendChild(db)
           }
         })
-
       } else {
         const db = document.createElement('a')
         db.innerHTML = `<a download href=${escapeHTML(images[i].src)}>
@@ -240,9 +239,9 @@ function injectButtons () {
       }
 
       // Here we will handle saved Tab
-      if ( selfProfileSavedTab ) {
+      if (selfProfileSavedTab) {
         console.log('%c Profile Saved Tab', 'background: #222; color: #bada55')
-        handleDownloadAll();
+        handleDownloadAll()
       }
     }
   } else {
@@ -305,41 +304,40 @@ function injectButtons () {
 function refresh () {
   // as we only can have 8 articles at a time.
   injectButtons()
-  downloadAlltrigger = 1;
+  downloadAlltrigger = 1
 }
 
 function handleDownloadAll () {
-    // check if download all button is there if
-    // not there add it.
-    var DownloadAllButton = document.querySelectorAll('.vtbgv a')
-    const headers = document.querySelectorAll('header')
+  // check if download all button is there if
+  // not there add it.
+  var DownloadAllButton = document.querySelectorAll('.vtbgv a')
+  const headers = document.querySelectorAll('header')
 
-    if (DownloadAllButton.length < 7) {
-      console.log('%c Adding Download All Button', 'background: #222; color: #bada55')
-      const alldlbutton = document.createElement('a')
-      alldlbutton.innerHTML = `
-                <a href="javascript:void(0);">
-                <button id="downloadAll" class="instanshu-unite instanshu-sm instanshu-success">Download All</button></a>`
-      headers[0].appendChild(alldlbutton)
+  if (DownloadAllButton.length < 7) {
+    console.log('%c Adding Download All Button', 'background: #222; color: #bada55')
+    const alldlbutton = document.createElement('a')
+    alldlbutton.innerHTML = `
+            <a href="javascript:void(0);">
+            <button id="downloadAll" class="instanshu-unite instanshu-sm instanshu-success">Download All</button></a>`
+    headers[0].appendChild(alldlbutton)
+  }
+  document.getElementById('downloadAll').addEventListener('click', downloader)
+  function downloader () {
+    const images = document.querySelectorAll('img')
+    for (i = 0; i < images.length; i += 1) {
+      // making the image link a downloading link
+      if (!images[i].src.endsWith('&dl=1')) {
+        images[i].src = `${images[i].src}&dl=1`
+      }
     }
-    document.getElementById('downloadAll').addEventListener("click", downloader);
-    function downloader() {
-
-      const images = document.querySelectorAll('img')
+    if (downloadAlltrigger === 1) {
       for (i = 0; i < images.length; i += 1) {
-        // making the image link a downloading link
-        if (!images[i].src.endsWith('&dl=1')) {
-          images[i].src = `${images[i].src}&dl=1`
-        }
+        var link = images[i].src
+        window.open(link)
       }
-      if (downloadAlltrigger === 1) {
-        for (i = 0; i < images.length; i += 1) {
-          var link = images[i].src;
-          window.open(link);
-        }
-        downloadAlltrigger = 0
-      }
+      downloadAlltrigger = 0
     }
+  }
 }
 
 injectButtons()
