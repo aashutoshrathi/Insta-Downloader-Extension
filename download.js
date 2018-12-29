@@ -88,15 +88,17 @@ function injectButtons () {
     if (
       !images[i].src.endsWith('&dl=1') &&
       images[i].className !== 'download-icon' &&
-      images[i].className !== 'download-video-icon'
+      images[i].className !== 'download-video-icon' &&
+      images[i].width !== 30 &&
+      images[i].height !== 30
     ) {
       images[i].src = `${images[i].src}&dl=1`
     }
   }
-  // // Grab images appearing on the page
+  // Grab images appearing on the page
   const videos = document.querySelectorAll('video')
-  // // making the video link as downloading dlink
 
+  // making the video link as downloading dlink
   if (videos[0]) {
     for (i = 0; i < videos.length; i += 1) {
       if (!videos[i].src.endsWith('&dl=1')) {
@@ -270,44 +272,48 @@ function injectButtons () {
       const dlbutton = document.createElement('a')
       dlbutton.className = 'download-btn'
       const downloadButton = document.createElement('span')
+      downloadButton.className = 'parent-span'
+      const childSpan = document.createElement('span')
+      childSpan.className = 'child-span'
+      const childbtn = document.createElement('button')
+      childbtn.className = 'dCJp8 afkep _0mzm-'
+      childbtn.appendChild(childSpan)
 
       let dlink = images[2 * i + 1].src
       if (videos[j] && videos[j].poster === dlink) {
         if (videos[j] && videos[j].src) {
           dlink = videos[j].src
           dlbutton.innerHTML = `
-                <a download href=${escapeHTML(dlink)}>
-                <button class="dCJp8 afkep _0mzm-">
-                  <img
-                    class="download-video-icon"
-                    src="https://img.icons8.com/ios/50/000000/sending-video-frames.png" width=29>
-                </button></a>`
+          <a download href=${escapeHTML(dlink)}>
+          <button class="dCJp8 afkep _0mzm-">
+          <img
+          class="download-video-icon"
+          src="https://img.icons8.com/ios/50/000000/sending-video-frames.png" width=29>
+          </button></a>`
         }
         j += 1
       } else {
         dlbutton.innerHTML = `
-                <a download href=${escapeHTML(dlink)}>
-                <button class="dCJp8 afkep _0mzm-">
-                  <img
-                    class="download-icon"
-                    src="https://img.icons8.com/ios/50/000000/installing-updates.png" width=29>
-                </button></a>`
+        <a download href=${escapeHTML(dlink)}>
+        <button class="dCJp8 afkep _0mzm-">
+        <img
+        class="download-icon"
+        src="https://img.icons8.com/ios/50/000000/installing-updates.png" width=29>
+        </button></a>`
       }
 
-      downloadButton.appendChild(dlbutton)
+      childbtn.appendChild(dlbutton)
+      downloadButton.appendChild(childbtn)
 
       const btns = sections[i].querySelectorAll('span')
-      if (btns[i].className === '') {
-        // console.log(btns)
+
+      if (btns.length === 6 && !btns[i].classList.contains('parent-span')) {
+        if (sections[i].querySelectorAll('span').length < 7) {
+          sections[i].insertBefore(downloadButton, btns[4])
+        }
       } else {
-        if (btns.length === 6) {
-          if (sections[i].querySelectorAll('span').length < 7) {
-            sections[i].insertBefore(downloadButton, btns[4])
-          }
-        } else {
-          if (sections[i].querySelectorAll('span').length < 9) {
-            sections[i].insertBefore(downloadButton, btns[6])
-          }
+        if (sections[i].querySelectorAll('span').length < 9) {
+          sections[i].insertBefore(downloadButton, btns[6])
         }
       }
       if (btns[1] && btns[1].parentElement.href === document.location.href) {
