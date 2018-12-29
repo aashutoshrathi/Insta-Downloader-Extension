@@ -18,7 +18,7 @@ link.type = 'text/css'
 link.rel = 'stylesheet'
 document.getElementsByTagName('head')[0].appendChild(link)
 let i = 0
-let downloadAlltrigger = 1
+let downloadAlltrigger = true
 
 console.log(
   '%c Hello Developer!\n Star us here: https://github.com/aashutoshrathi/Insta-Downloader-Extension',
@@ -304,7 +304,7 @@ function injectButtons () {
 function refresh () {
   // as we only can have 8 articles at a time.
   injectButtons()
-  downloadAlltrigger = 1
+  downloadAlltrigger = true
 }
 
 function handleDownloadAll () {
@@ -335,7 +335,7 @@ function handleDownloadAll () {
         images[i].src = `${images[i].src}&dl=1`
       }
     }
-    if (downloadAlltrigger === 1) {
+    if (downloadAlltrigger === true) {
       console.log('%c Getting Images', 'background: #222; color: #bada55')
       for (i = 0; i < images.length; i += 1) {
         var link = images[i].src
@@ -343,7 +343,7 @@ function handleDownloadAll () {
       }
       console.log('%c Getting Images', 'background: #222; color: #bada55')
       urls.forEach(function (url, index) {
-        var filename = index + '.jpg'
+        var filename = 'Image' + index + '.jpg'
         // loading a file and add it in a zip file
         JSZipUtils.getBinaryContent(url, function (err, data) {
           if (err) {
@@ -358,7 +358,7 @@ function handleDownloadAll () {
             })
           }
         })
-        downloadAlltrigger = 0
+        downloadAlltrigger = false
       })
     }
   }
