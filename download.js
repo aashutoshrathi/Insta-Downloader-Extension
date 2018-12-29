@@ -275,9 +275,6 @@ function injectButtons () {
       downloadButton.className = 'parent-span'
       const childSpan = document.createElement('span')
       childSpan.className = 'child-span'
-      const childbtn = document.createElement('button')
-      childbtn.className = 'dCJp8 afkep _0mzm-'
-      childbtn.appendChild(childSpan)
 
       let dlink = images[2 * i + 1].src
       if (videos[j] && videos[j].poster === dlink) {
@@ -302,12 +299,12 @@ function injectButtons () {
         </button></a>`
       }
 
-      childbtn.appendChild(dlbutton)
-      downloadButton.appendChild(childbtn)
+      childSpan.appendChild(dlbutton)
+      downloadButton.appendChild(childSpan)
 
       const btns = sections[i].querySelectorAll('span')
 
-      if (btns.length === 6 && !btns[i].classList.contains('parent-span')) {
+      if (btns.length === 6) {
         if (sections[i].querySelectorAll('span').length < 7) {
           sections[i].insertBefore(downloadButton, btns[4])
         }
