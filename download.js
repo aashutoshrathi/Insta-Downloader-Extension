@@ -248,6 +248,10 @@ function injectButtons () {
 
       buttonsParent.className = 'download-buttons'
       let dlink = images[2 * i + 1].src
+      if (dlink === 'https://www.instagram.com/&dl=1') {
+        refresh()
+        return
+      }
       let dplink = images[2 * i].src
 
       pfbutton.innerHTML = `
@@ -305,11 +309,11 @@ function injectButtons () {
       const btns = sections[i].querySelectorAll('span')
 
       if (btns.length === 6) {
-        if (sections[i].querySelectorAll('span').length < 7) {
+        if (btns.length < 7) {
           sections[i].insertBefore(downloadButton, btns[4])
         }
-      } else {
-        if (sections[i].querySelectorAll('span').length < 9) {
+      } else if (btns.length === 8) {
+        if (btns.length < 9) {
           sections[i].insertBefore(downloadButton, btns[6])
         }
       }
