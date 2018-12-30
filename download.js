@@ -89,9 +89,7 @@ function injectButtons () {
     if (
       !images[i].src.endsWith('&dl=1') &&
       images[i].className !== 'download-icon' &&
-      images[i].className !== 'download-video-icon' &&
-      images[i].width !== 30 &&
-      images[i].height !== 30
+      images[i].className !== 'download-video-icon'
     ) {
       images[i].src = `${images[i].src}&dl=1`
     }
