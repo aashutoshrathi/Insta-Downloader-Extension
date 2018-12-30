@@ -306,14 +306,20 @@ function injectButtons () {
 
       const btns = sections[i].querySelectorAll('span')
 
-      if (btns.length === 6) {
-        if (btns.length < 7) {
-          sections[i].insertBefore(downloadButton, btns[4])
-        }
-      } else if (btns.length === 8) {
-        if (btns.length < 9) {
-          sections[i].insertBefore(downloadButton, btns[6])
-        }
+      if (
+        btns.length === 6 &&
+        btns.length < 7 &&
+        btns[4].className !== 'parent-span' &&
+        btns[5].className !== 'child-span'
+      ) {
+        sections[i].insertBefore(downloadButton, btns[4])
+      } else if (
+        btns.length === 8 &&
+        btns.length < 9 &&
+        btns[4].className !== 'parent-span' &&
+        btns[5].className !== 'child-span'
+      ) {
+        sections[i].insertBefore(downloadButton, btns[6])
       }
       if (btns[1] && btns[1].parentElement.href === document.location.href) {
         btns[1].parentElement.href = dlink
