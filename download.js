@@ -18,6 +18,7 @@ link.type = 'text/css'
 link.rel = 'stylesheet'
 document.getElementsByTagName('head')[0].appendChild(link)
 let i = 0
+let dlink
 
 console.log(
   '%c Hello Developer!\n Star us here: https://github.com/aashutoshrathi/Insta-Downloader-Extension',
@@ -247,11 +248,8 @@ function injectButtons () {
       const buttonsParent = document.createElement('div')
 
       buttonsParent.className = 'download-buttons'
-      let dlink = images[2 * i + 1].src
-      if (dlink === 'https://www.instagram.com/&dl=1') {
-        refresh()
-        return
-      }
+      dlink = images[2 * i + 1].src
+
       let dplink = images[2 * i].src
 
       pfbutton.innerHTML = `
@@ -322,6 +320,10 @@ function injectButtons () {
       }
     }
   }
+  if (dlink === 'https://www.instagram.com/&dl=1') {
+    refresh()
+  }
+
   window.onscroll = function ref () {
     refresh()
   }
