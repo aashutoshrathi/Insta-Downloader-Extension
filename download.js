@@ -278,7 +278,7 @@ function injectButtons () {
       const childSpan = document.createElement('span')
       childSpan.className = 'child-span'
 
-      let dlink = images[2 * i + 1].src
+      dlink = images[2 * i + 1].src
       if (videos[j] && videos[j].poster === dlink) {
         if (videos[j] && videos[j].src) {
           dlink = videos[j].src
