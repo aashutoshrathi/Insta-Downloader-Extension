@@ -2,5 +2,10 @@
     "extends": "standard",
     "env": {
         "webextensions": true
+    },
+    "globals": {
+          "JSZip": true,
+          "JSZipUtils": true,
+          "saveAs": true
     }
 }
