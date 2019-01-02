@@ -1,5 +1,10 @@
 {
   "extends": "eslint:recommended",
+  "globals": {
+        "JSZip": true,
+        "JSZipUtils": true,
+        "saveAs": true
+  }
   "plugins": ["prettier"],
   "parser": "babel-eslint",
   "parserOptions": {
