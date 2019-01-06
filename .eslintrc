@@ -6,7 +6,7 @@
         "saveAs": true
   }
   "plugins": ["prettier"],
-  "parser": "babel-eslint",
+  // "parser": "babel-eslint",
   "parserOptions": {
     "ecmaVersion": 2016,
     "sourceType": "module",
