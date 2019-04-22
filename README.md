@@ -40,6 +40,8 @@ An extension that adds a button to each post to download the corresponding image
 
 ### Chrome Users
 
+[<img src="https://developer.chrome.com/webstore/images/ChromeWebStore_BadgeWBorder_v2_496x150.png" width="250">](https://chrome.google.com/webstore/detail/instagram-downloader/docnhedbkcepcpcjnlghoddaofndgadb/)
+
 - Get it locally -
 
   ```sh
