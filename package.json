@@ -36,7 +36,7 @@
     "prettier": "^2.0.5"
   },
   "dependencies": {
-    "file-saver": "^2.0.2",
+    "file-saver": "^2.0.5",
     "jszip": "^3.5.0",
     "jszip-utils": "0.1.0",
     "xmlhttprequest": "^1.8.0"
