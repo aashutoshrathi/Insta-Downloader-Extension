@@ -37,7 +37,7 @@
   },
   "dependencies": {
     "file-saver": "^2.0.2",
-    "jszip": "^3.5.0",
+    "jszip": "^3.6.0",
     "jszip-utils": "0.1.0",
     "xmlhttprequest": "^1.8.0"
   }
