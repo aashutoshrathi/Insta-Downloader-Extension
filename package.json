@@ -22,7 +22,7 @@
   "homepage": "https://github.com/aashutoshrathi/Insta-Downloader-Extension#readme",
   "devDependencies": {
     "babel-eslint": "^10.1.0",
-    "eslint": "^9.20.0",
+    "eslint": "^9.20.1",
     "eslint-config-airbnb": "^15.1.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-config-standard": "^16.0.3",
